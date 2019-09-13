@@ -1,0 +1,56 @@
+body {
+  background: #b7dfff;
+  margin: 0;
+}
+.desktop {
+  position: relative;
+  padding: 10px;
+}
+.header {
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #339af0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 10px;
+  text-decoration: none;
+}
+
+.navbar a.right {
+  float: right;
+  padding: 12px 14px;
+}
+.grid-container {
+  padding-left: 0;
+  padding: 10px;
+}
+.grid-container button {
+  font-size: 25px;
+}
+.desktop button {
+  background-color: #339af0; /* Green */
+  border: none;
+  color: white;
+  padding: 13px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 16px;
+}
+p {
+  font-size: 12px;
+}
