@@ -22,10 +22,8 @@
         <a href="#" onclick="dropdown()" class="dropbtn"
           ><i class="fab fa-windows"></i> Start</a
         >
-        <a href="#" onclick="setdropdown()" class="setdropdown"
-          ><i class="fas fa-cog"></i> Settings</a
-        >
-        <a href="#" class="right" id="time">8:44PM</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" class="right" id="timesection"></a>
         <a href="#" class="right">ENG</a>
       </div>
       <div id="myDropdown" class="dropdown-content">
@@ -74,8 +72,26 @@
           <p>My Documents</p>
         </button>
       </div>
-      <p id="timesection"></p>
     </div>
     <script src="src/start.js"></script>
+    <script type="text/javascript">
+      var date = new Date();
+      var minutes = date.getMinutes();
+      var hours = date.getHours();
+
+      setInterval(getTime, 1000);
+
+      function getTime() {
+        var date = new Date();
+        var taskbarTimer = date.getHours() + ":" + date.getMinutes();
+        if (date.getMinutes() < 10 && date.getHours() < 10) {
+          var minutes = "0" + date.getMinutes();
+          var hours = "0" + date.getHours();
+          // console.log(myHr + " " + myMin);
+        }
+        // console.log(taskbarTimer);
+        document.getElementById("timesection").innerHTML = taskbarTimer;
+      }
+    </script>
   </body>
 </html>
