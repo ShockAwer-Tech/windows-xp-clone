@@ -1,6 +1,10 @@
 dropdown = () => {
   document.getElementById("myDropdown").classList.toggle("show");
 };
+
+setdropdown = () => {
+  document.getElementById("setDropdown").classList.toggle("show");
+};
 openWord = () => {
   testwindow = window.open(
     "",
@@ -13,6 +17,19 @@ openWord = () => {
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+window.onclick = function(event) {
+  if (!event.target.matches(".setdropdown")) {
+    var dropdowns = document.getElementsByClassName("setdropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
