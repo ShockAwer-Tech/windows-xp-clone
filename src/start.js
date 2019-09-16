@@ -4,8 +4,8 @@ dropdown = () => {
 openWord = () => {
   testwindow = window.open(
     "",
-    "Word",
-    "location=1,status=1,scrollbars=1,width=200,height=200"
+    "_blank",
+    "location=1,status=1,scrollbars=1,width=400, height=450,float=right"
   );
   testwindow.moveTo(0, 0);
 };
