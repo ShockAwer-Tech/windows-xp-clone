@@ -7,16 +7,31 @@
     <title>Windows Xp</title>
     <link rel="stylesheet" href="src/index.css" />
 
-    <!-- UIkit JS -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style></style>
   </head>
   <body>
     <div>
       <div class="navbar">
-        <a href="#"><i class="fab fa-windows"></i> Start</a>
+        <a href="#" onclick="dropdown()" class="dropbtn"
+          ><i class="fab fa-windows"></i> Start</a
+        >
         <a href="#"><i class="fas fa-cog"></i> Settings</a>
         <a href="#" class="right" id="time">8:44PM</a>
         <a href="#" class="right">ENG</a>
+      </div>
+      <div id="myDropdown" class="dropdown-content">
+        <div class="windows-grid-container">
+          <a class="grid-item" onclick="openWord()">MS Word</a>
+          <a class="grid-item">Excel</a>
+          <a class="grid-item">Calculator</a>
+          <a class="grid-item">Powerpoint</a>
+          <a class="grid-item">Settings</a>
+          <a class="grid-item">VS Code</a>
+          <a class="grid-item">Mail</a>
+          <a class="grid-item">Utilities</a>
+          <a class="grid-item">Games</a>
+        </div>
       </div>
     </div>
 
@@ -37,5 +52,6 @@
       </div>
       <p id="timesection"></p>
     </div>
+    <script src="src/start.js"></script>
   </body>
 </html>
