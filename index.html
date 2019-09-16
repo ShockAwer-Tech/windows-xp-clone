@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Windows Xp</title>
+    <link rel="stylesheet" href="src/index.css" />
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <div class="navbar">
+        <a href="#" onclick="dropdown()" class="dropbtn"
+          ><i class="fab fa-windows"></i> Start</a
+        >
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" class="right" id="timesection"></a>
+        <a href="#" class="right">ENG</a>
+      </div>
+      <div id="myDropdown" class="dropdown-content">
+        <div class="windows-grid-container">
+          <a class="grid-item" onclick="openWord()">MS Word</a>
+          <a class="grid-item">Excel</a>
+          <a class="grid-item">Calculator</a>
+          <a class="grid-item">Powerpoint</a>
+          <a class="grid-item">Settings</a>
+          <a class="grid-item">VS Code</a>
+          <a class="grid-item">Mail</a>
+          <a class="grid-item">Utilities</a>
+          <a class="grid-item">Games</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="desktop">
+      <div class="grid-container">
+        <button href="#" class="right">
+          <i class="far fa-trash-alt"></i>
+          <p>Recycle</p>
+        </button>
+        <button href="#" class="right">
+          <i class="fab fa-chrome"></i>
+          <p>Chrome</p>
+        </button>
+        <button href="#" class="right">
+          <i class="far fa-folder-open" style="transform:rotate(90deg)"> </i>
+          <p>My Documents</p>
+        </button>
+      </div>
+    </div>
+    <script src="src/start.js"></script>
+    <script type="text/javascript">
+      var date = new Date();
+      var minutes = date.getMinutes();
+      var hours = date.getHours();
+
+      setInterval(getTime, 1000);
+
+      function getTime() {
+        var date = new Date();
+        var taskbarTimer = date.getHours() + ":" + date.getMinutes();
+        if (date.getMinutes() < 10 && date.getHours() < 10) {
+          var minutes = "0" + date.getMinutes();
+          var hours = "0" + date.getHours();
+          // console.log(myHr + " " + myMin);
+        }
+        // console.log(taskbarTimer);
+        document.getElementById("timesection").innerHTML = taskbarTimer;
+      }
+    </script>
+  </body>
+</html>
