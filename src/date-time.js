@@ -1,13 +1,15 @@
 setInterval(getTime, 1000);
+setInterval(getDate, 1000);
+var d = new Date();
 
 function getTime() {
-  date = new Date();
+  d = new Date();
+  var minutes = d.getMinutes();
+  var hours = d.getHours();
 
-  var minutes = date.getMinutes();
-  var hours = date.getHours();
+  document.getElementById("time-section").innerHTML = parseTime(hours, minutes);
 
-  document.getElementById("timesection").innerHTML = parseTime(hours, minutes);
-
+  // Time
   function parseTime(hours, minutes) {
     if (minutes < 10) {
       minutes = "0" + minutes;
@@ -16,5 +18,28 @@ function getTime() {
       hours = "0" + hours;
     }
     return hours + ":" + minutes;
+  }
+}
+
+function getDate() {
+  d = new Date();
+  var date = d.getDate();
+  var month = 1 + d.getMonth();
+  var year = d.getFullYear();
+
+  document.getElementById("date-section").innerHTML = parseDate(
+    date,
+    month,
+    year
+  );
+  // Date
+  function parseDate(date, month, year) {
+    if (date < 10) {
+      date = "0" + date;
+    }
+    if (month < 10) {
+      month = "0" + month;
+    }
+    return date + "/" + month + "/" + year;
   }
 }
