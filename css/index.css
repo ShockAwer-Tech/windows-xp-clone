@@ -138,7 +138,7 @@ p {
   display: none;
   position: absolute;
   margin: 10px;
-  background-color: #ccc;
+  background-color: #eaeff5;
   min-width: 500px;
   height: 500px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -161,25 +161,51 @@ p {
 
 .box {
   display: flex;
-  align-content: space-around;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-content: space-between;
+  /* outline: 1px solid red; */
+  margin: 10px;
 }
 
-.setting {
-  text-align: center;
-  outline: 1px solid red;
+.box-one,
+.box-three {
+  background: #eef2f6;
+  flex: 1;
 }
-/* 
-.box-item {
-  justify-content: space-between;
+
+.box-one,
+.box-two,
+.box-three {
+  padding: 50px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* .dot:hover {
+  visibility: hidden;
 } */
 
-.window-buttons {
-  display: inline;
-  margin-left: auto;
+.min:hover {
+  background-color: #bbb;
 }
 
-.close {
-  display: none;
-  cursor: pointer;
+.max:hover {
+  background-color: yellow;
+  visibility: visible;
+}
+
+.close:hover {
+  background-color: red;
+  visibility: visible;
+}
+
+.close:hover i {
+  background-color: red;
+  visibility: visible;
 }
