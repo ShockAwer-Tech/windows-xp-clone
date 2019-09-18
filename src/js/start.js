@@ -1,5 +1,5 @@
 dropdown = () => {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("startDropdown").classList.toggle("show");
 };
 
 setdropdown = () => {
@@ -9,7 +9,7 @@ openWord = () => {
   testwindow = window.open(
     "",
     "Word",
-    "location=1,status=1,scrollbars=1,width=200,height=200"
+    "location=1,status=1,scrollbars=1,width=400, height=450,toolbar=yes,scrollbars=yes,resizable=yes"
   );
   testwindow.moveTo(0, 0);
 };
