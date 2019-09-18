@@ -31,8 +31,8 @@
       </div>
       <div id="myDropdown" class="dropdown-content">
         <div class="windows-grid-container">
-          <a class="grid-item" onclick="openWord()">MS Word</a>
-          <a class="grid-item">Excel</a>
+          <a class="grid-item" id="word" onclick="openWord()">MS Word</a>
+          <a class="grid-item" onclick="openWord()">Excel</a>
           <a class="grid-item">Calculator</a>
           <a class="grid-item">Powerpoint</a>
           <a class="grid-item" onclick="setdropdown()">Settings</a>
@@ -40,6 +40,24 @@
           <a class="grid-item">Mail</a>
           <a class="grid-item">Utilities</a>
           <a class="grid-item">Games</a>
+        </div>
+      </div>
+
+      <div id="wordModal" class="modal">
+        <div class="word-content">
+          <div class="word-header">
+            <div>
+                <span class="close">&times;</span>
+                <span class="maximize">&plus;</span>
+                <span class="minimize">&minus;</span>
+            </div>
+            <h2>Word</h2>
+          </div>
+          <div class="word-body">
+            <p>Some text in the Modal Body</p>
+            <p>Some other text...</p>
+          </div>
+        
         </div>
       </div>
 
@@ -51,7 +69,7 @@
           <div>
             <span class="close">x</span>
           </div>
-          <div>
+          <div class="icons">
             <span class="icon max">x</span>
             <i class="fas fa-times"></i>
             <i class="fas fa-times"></i>
