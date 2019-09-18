@@ -1,0 +1,66 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  /*outline: 1px solid red; */
+  margin: 10px;
+}
+
+.box-one,
+.box-three {
+  background: #ebf8ff;
+  flex: 1;
+}
+
+.box-one,
+.box-two,
+.box-three,
+.box-four {
+  padding: 15px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+}
+
+.min:hover {
+  background-color: #bbb;
+}
+
+.max:hover {
+  background-color: yellow;
+  visibility: visible;
+}
+
+.close:hover {
+  background-color: red;
+  visibility: visible;
+}
+
+.icon {
+  font-size: 30px;
+  text-align: center;
+}
+
+.bluetooth,
+.accessibility,
+.language,
+.home,
+.desktop {
+  color: dodgerblue;
+}
+
+.folder,
+.keyboard,
+.theme {
+  color: goldenrod;
+}
+
+.silver {
+  color: #bbb;
+}
