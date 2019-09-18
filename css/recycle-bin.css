@@ -1,0 +1,120 @@
+* {
+  /*outline: 1px solid red !important;*/
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.recycle-bin-style {
+  position: relative;
+  top: 200px;
+  background-color: #339af0;
+  width: 100px;
+  height: 80px;
+  margin-left: 10px;
+  padding: 30px 10px 10px 10px;
+  border-radius: 5px;
+}
+.recycle-bin-style:hover {
+  background-color: #21669e;
+  color: #fff;
+  cursor: pointer;
+}
+.recycle-bin-style:hover i {
+  color: #ffffff;
+}
+.recycle-bin-style:hover p {
+  color: #ffffff;
+}
+.recycle-bin-content {
+  text-align: center;
+}
+.recycle-bin-content i {
+  color: rgb(228, 228, 228);
+  font-size: 28px;
+  text-align: center;
+}
+.recycle-bin-content p {
+  color: rgb(228, 228, 228);
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+.recycle-bin-window {
+  width: 500px;
+  height: 500px;
+  background-color: #ccc;
+  position: relative;
+  left: 150px;
+  top: 80px;
+  display: flex;
+  flex-direction: row;
+}
+.recycle-bin-left-pane {
+  width: 150px;
+  background-color: #000;
+}
+.recycle-bin-right-pane {
+  width: 350px;
+  background-color: rgb(36, 36, 36);
+}
+.nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 10px 0 10px 20px ;
+  font-family: 'Roboto', sans-serif;
+
+}
+.nav a:hover {
+  background-color: #4a4a4a;
+  color: #fff;
+}
+.white-text {
+  color: #fff;
+}
+.recycle-window-style {
+  width: 500px; 
+  height: 500px; 
+  position: relative; 
+  left: 150px; 
+  top: 80px;
+}
+.recycle-window-style-content-wrapper-header {
+  height: 30px;
+  background-color: #000;
+}
+.recycle-window-style-content-wrapper {
+  display: flex; 
+  flex-direction: row;
+  height: 470px; 
+}
+.recycle-window-style-content-left-pane {
+  width: 150px;
+  background-color: #000;
+}
+.recycle-window-style-content-right-pane {
+  width: 350px;
+  background-color: rgb(36, 36, 36);
+}
+.close-button a {
+  color: #fff;
+  float: right;
+  padding: 6px 8px;
+  text-decoration: none;
+}
+.close-button a:hover {
+  background-color: red;
+}
+.min-button a {
+  color: #fff;
+  float: right;
+  padding: 6px 8px;
+  text-decoration: none;
+}
+.min-button a:hover {
+  background-color: #4a4a4a;
+}

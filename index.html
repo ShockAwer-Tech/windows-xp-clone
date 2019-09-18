@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Windows Xp</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/recycle-bin.css" />
     <link
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css?family=Manjari|Roboto&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style></style>
@@ -76,8 +78,40 @@
         </button>
       </div>
     </div>
+    <!-- Recycle Bin -->
+    <div class="recycle-bin-style" id="recycle-bin-button">
+      <div class="recycle-bin-content">
+        <i class="far fa-trash-alt"></i>
+        <p>Recycle Bin</p>
+      </div>
+    </div>
+    <section id="recycle-bin-window" class="recycle-window-style" style="display: nne;">
+      <div class="recycle-window-style-content-wrapper-header" style="">
+        <div class="close-button">
+          <a id="close-button" href="#"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="min-button">
+          <a id="min-button" href="#"><i class="fas fa-minus"></i></a>
+        </div>
+      </div>
+      <div class="recycle-window-style-content-wrapper">
+        <div class="recycle-window-style-content-left-pane">
+          <div class="nav">
+            <a href="#"><i class="fas fa-desktop"></i>&nbsp;&nbsp;<span>Desktop</span> </a>
+            <a href="#">&nbsp;<i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;<span>My Doduments</span> </a>
+          </div>
+        </div>
+        <div class="recycle-window-style-content-right-pane">
+          <div>
+            <!-- <button id="test-button">Click me</button> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Recycle Bin -->
     <script type="text/javascript" src="src/start.js"></script>
     <script type="text/javascript" src="src/settings.js"></script>
     <script type="text/javascript" src="src/date-time.js"></script>
+    <script type="text/javascript" src="src/recycle-bin.js"></script>
   </body>
 </html>
