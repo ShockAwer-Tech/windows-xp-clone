@@ -22,7 +22,9 @@
         <a href="#" onclick="dropdown()" class="dropbtn"
           ><i class="fab fa-windows"></i> Start</a
         >
-        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" onclick="setdropdown()"
+          ><i class="fas fa-cog"></i> Settings</a
+        >
         <a href="#" class="right" id="date-section"></a>
         <a href="#" class="right" id="time-section"></a>
         <a href="#" class="right">ENG</a>
@@ -33,7 +35,7 @@
           <a class="grid-item">Excel</a>
           <a class="grid-item">Calculator</a>
           <a class="grid-item">Powerpoint</a>
-          <a class="grid-item">Settings</a>
+          <a class="grid-item" onclick="setdropdown()">Settings</a>
           <a class="grid-item">VS Code</a>
           <a class="grid-item">Mail</a>
           <a class="grid-item">Utilities</a>
@@ -44,15 +46,15 @@
       <div id="setDropdown" class="setdropdown-content">
         <div class="windows-grid-container box">
           <div>
-            <span class=""></i>MS Word</span>
+            <span class="">MS Word</span>
           </div>
           <div>
             <span class="close">x</span>
           </div>
           <div>
             <span class="icon max">x</span>
-            <i class="fas fa-times"></i>            
-            <i class="fas fa-times"></i>          
+            <i class="fas fa-times"></i>
+            <i class="fas fa-times"></i>
           </div>
         </div>
       </div>
@@ -74,8 +76,8 @@
         </button>
       </div>
     </div>
-    <script src="src/start.js"></script>
-    <script src="src/settings.js"></script>
-    <script src="src/date-time.js"></script>
+    <script type="text/javascript" src="src/start.js"></script>
+    <script type="text/javascript" src="src/settings.js"></script>
+    <script type="text/javascript" src="src/date-time.js"></script>
   </body>
 </html>

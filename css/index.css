@@ -33,10 +33,7 @@ body {
   float: right;
   padding: 12px 14px;
 }
-/* .grid-container {
-  padding-left: 0;
-  padding: 10px;
-} */
+
 .grid-container button {
   font-size: 25px;
   padding-left: 0;
@@ -57,7 +54,7 @@ body {
   cursor: pointer;
 }
 .desktop button {
-  background-color: #339af0; /* Green */
+  background-color: #339af0;
   border: none;
   color: white;
   padding: 13px 25px;
