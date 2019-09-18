@@ -2,17 +2,14 @@ dropdown = () => {
   document.getElementById("myDropdown").classList.toggle("show");
 };
 
-setdropdown = () => {
-  document.getElementById("setDropdown").classList.toggle("show");
-};
-openWord = () => {
-  testwindow = window.open(
-    "",
-    "_blank",
-    "location=1,status=1,scrollbars=1,width=400, height=450,float=right"
-  );
-  testwindow.moveTo(0, 0);
-};
+// openWindow = () => {
+//   testwindow = window.open(
+//     "",
+//     "",
+//     "location=1,status=1,scrollbars=1,width=400, height=450,float=right"
+//   );
+//   testwindow.moveTo(0, 0);
+// };
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
@@ -25,4 +22,40 @@ window.onclick = function(event) {
       }
     }
   }
+};
+
+openWord = () => {
+  var modal = document.getElementById("wordModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("word");
+
+  // Get the <span> element that closes the modal
+  let close = document.getElementsByClassName("close")[0];
+  let minimize = document.getElementsByClassName("minimize");
+
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  };
+
+  // When the user clicks on <span> (x), close the modal
+
+  close.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  minimize.onclick = function() {
+    modal.style.display.resizeTo(250, 250);
+  };
+  maximize.onclick = function() {
+    modal.style.display.resizeTo(250, 250);
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 };
