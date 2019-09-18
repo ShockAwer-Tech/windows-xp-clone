@@ -1,0 +1,178 @@
+body {
+  background: #b7dfff;
+  margin: 0;
+}
+.desktop {
+  position: relative;
+  padding: 10px;
+}
+.header {
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #339af0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 10px;
+  text-decoration: none;
+}
+
+.navbar a.right {
+  float: right;
+  padding: 12px 14px;
+}
+
+.grid-container button {
+  font-size: 25px;
+  padding-left: 0;
+  padding: 10px;
+}
+.windows-grid-container {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background-color: #1b507c;
+  padding: 10px;
+}
+
+.grid-item {
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.desktop button {
+  background-color: #339af0;
+  border: none;
+  color: white;
+  padding: 13px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 16px;
+}
+p {
+  font-size: 12px;
+}
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #2980b9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  content: left;
+  background-color: #f1f1f1;
+  margin: 10px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+.show {
+  display: block;
+  float: right;
+}
+
+.setdropdown {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.setdropdown:hover,
+.setdropdown:focus {
+  background-color: #2980b9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.setdropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.setdropdown-content {
+  display: none;
+  position: absolute;
+  margin: 10px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.setdropdown-content a {
+  color: black;
+  margin-top: 10px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+.box {
+  width: 500px;
+  height: 500px;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+.icon.close {
+  background-color: red;
+}
+
+.icon.max {
+  background-color: red;
+}
+
+.icon.min {
+  background-color: green;
+}

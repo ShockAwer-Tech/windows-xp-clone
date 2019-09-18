@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Windows Xp</title>
-    <link rel="stylesheet" href="src/css/index.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
@@ -22,9 +22,8 @@
         <a href="#" onclick="dropdown()" class="dropbtn"
           ><i class="fab fa-windows"></i> Start</a
         >
-        <a href="#" onclick="setdropdown()"
-          ><i class="fas fa-cog"></i> Settings</a
-        >
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#" class="right" id="test">17/09/2019</a>
         <a href="#" class="right" id="timesection"></a>
         <a href="#" class="right">ENG</a>
       </div>
@@ -75,28 +74,7 @@
         </button>
       </div>
     </div>
-
-    <script src="src/js/window.js"></script>
-    <script src="src/js/settings.js"></script>
-
-    <script type="text/javascript">
-      var date = new Date();
-      var minutes = date.getMinutes();
-      var hours = date.getHours();
-
-      setInterval(getTime, 1000);
-
-      function getTime() {
-        var date = new Date();
-        var taskbarTimer = date.getHours() + ":" + date.getMinutes();
-        if (date.getMinutes() < 10 && date.getHours() < 10) {
-          var minutes = "0" + date.getMinutes();
-          var hours = "0" + date.getHours();
-          // console.log(myHr + " " + myMin);
-        }
-        // console.log(taskbarTimer);
-        document.getElementById("timesection").innerHTML = taskbarTimer;
-      }
-    </script>
+    <script src="src/start.js"></script>
+    <script type="text/javascript" src="src/date-time.js"></script>
   </body>
 </html>
