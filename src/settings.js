@@ -1,5 +1,7 @@
-setdropdown = () => {
-  document.getElementById("setDropdown").classList.toggle("show");
+minimize = () => {
+  let minimize = document.getElementById("close");
+  return (minimize.parentElement.parentElement.parentElement.style.display =
+    "none");
 };
 // window.onclick = function(event) {
 //   if (!event.target.matches(".setdropdown")) {
