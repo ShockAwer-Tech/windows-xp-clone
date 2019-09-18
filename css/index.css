@@ -132,7 +132,10 @@ p {
   position: relative;
   display: inline-block;
 }
-
+.recyclebin-window-style {
+  left: 100px;
+  top: 100px;
+}
 /* Dropdown Content (Hidden by Default) */
 .setdropdown-content {
   display: none;
