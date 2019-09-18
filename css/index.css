@@ -138,8 +138,9 @@ p {
   display: none;
   position: absolute;
   margin: 10px;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  background-color: #ccc;
+  min-width: 500px;
+  height: 500px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -159,20 +160,26 @@ p {
 }
 
 .box {
-  width: 500px;
-  height: 500px;
-  background-color: grey;
-  border-radius: 5px;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
 }
 
-.icon.close {
-  background-color: red;
+.setting {
+  text-align: center;
+  outline: 1px solid red;
+}
+/* 
+.box-item {
+  justify-content: space-between;
+} */
+
+.window-buttons {
+  display: inline;
+  margin-left: auto;
 }
 
-.icon.max {
-  background-color: red;
-}
-
-.icon.min {
-  background-color: green;
+.close {
+  display: none;
+  cursor: pointer;
 }

@@ -1,3 +1,3 @@
-setdropdown = () => {
-  document.getElementById("setDropdown").classList.toggle("show");
+minimize = () => {
+  document.getElementById("close").classList.toggle("close");
 };
