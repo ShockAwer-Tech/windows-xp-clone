@@ -2,6 +2,7 @@ let settings = document.getElementById("settings");
 let close = document.getElementById("close");
 let x = document.getElementById("setDropdown");
 let max = document.getElementById("max");
+let min = document.getElementById("min");
 let elem = document.documentElement;
 
 function openSettings() {
@@ -17,26 +18,17 @@ settings.addEventListener("click", openSettings);
 
 // launches fullscreen
 max.addEventListener("click", function() {
-  let x = document.getElementById("setDropdown");
-  if (x.requestFullscreen) {
-    x.requestFullscreen();
-  } else if (x.mozRequestFullscreen) {
-    x.mozRequestFullScreen();
-  } else if (x.webkitRequestFullscreen) {
-    x.webkitRequestFullscreen();
-  } else if (x.msRequestFullscreen) {
-    x.msRequestFullscreen();
+  if (x.style.minWidth !== "99.2%" && x.style.minHeight !== "96%") {
+    x.style.minWidth = "99.2%";
+    x.style.minHeight = "96%";
   }
 });
 
-// close full screen
-max.addEventListener("click", function() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.mozCancelFullscreen) {
-    document.mozCancelFullscreen();
-  } else if (document.webkitExitFullscreen()) {
-    document.webkitExitFullscreen();
+// minimize the widow
+min.addEventListener("click", function() {
+  if (x.style.minWidth !== "500px" && x.style.minHeight !== "500px") {
+    x.style.minWidth = "500px";
+    x.style.minHeight = "500px";
   }
 });
 
