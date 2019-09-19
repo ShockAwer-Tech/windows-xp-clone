@@ -1,16 +1,8 @@
+// start menu dropdown
 dropdown = () => {
   document.getElementById("myDropdown").classList.toggle("show");
 };
 
-openWindow = () => {
-  testwindow = window.open(
-    "",
-    "",
-    "location=1,toolbar=no,status=1,scrollbars=1,width=400, height=450,float=right,top=500,left=500"
-  );
-  testwindow.moveTo(0, 0);
-};
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -24,45 +16,58 @@ window.onclick = function(event) {
   }
 };
 
-openWord = () => {
-  let modal = document.getElementById("wordModal");
+//dropdown for word
+let wordTab = document.getElementById("Word");
+let excelTab = document.getElementById("Excel");
+let buttonClose = document.getElementById("closeButton");
+let newWindow = document.getElementById("windowDropdown");
+let maximize = document.getElementById("maximize");
+let minimize = document.getElementById("minimize");
 
-  // Get the button that opens the modal
-  let wordTab = document.getElementById("word");
+function openWord() {
+  if (newWindow.style.display === "none") {
+    newWindow.style.display = "block";
+  } else {
+    newWindow.style.display = "none";
+  }
+}
+wordTab.addEventListener("click", openWord);
 
-  // Get the <span> element that closes the modal
-  let close = document.getElementsByClassName("close")[0];
-  let minimize = document.getElementsByClassName("minimize")[0];
+function openExcel() {
+  if (newWindow.style.display === "none") {
+    newWindow.style.display = "block";
+  } else {
+    newWindow.style.display = "none";
+  }
+}
+excelTab.addEventListener("click", openExcel);
 
-  // When the user clicks on the button, open the modal
-  wordTab.onclick = function() {
-    modal.style.display = "block";
-  };
+maximize.addEventListener("click", function() {
+  if (
+    newWindow.style.minWidth !== "99.2%" &&
+    newWindow.style.minHeight !== "96%"
+  ) {
+    newWindow.style.minWidth = "99.2%";
+    newWindow.style.minHeight = "96%";
+  }
+});
 
-  // When the user clicks on <span> (x), close the modal
-  close.addEventListener("click", function() {
-    modal.style.display = "none";
-  });
+minimize.addEventListener("click", function() {
+  if (
+    newWindow.style.minWidth !== "500px" &&
+    newWindow.style.minHeight !== "500px"
+  ) {
+    newWindow.style.minWidth = "500px";
+    newWindow.style.minHeight = "500px";
+  }
+});
+buttonClose.addEventListener("click", function() {
+  newWindow.style.display = "none";
+});
 
-  minimize.onclick = function() {
-    modal.minimize();
-  };
-  maximize.onclick = function() {
-    modal.style.display.resizeTo(250, 250);
-  };
+function getPageTitle() {
+  let title = document.getAttribute("id");
+  document.getElementById("pageTitle").innerHTML = title;
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-};
-// minimizeWord = () => {
-//   var modal = document.getElementById("wordModal");
-
-//   let minimize = document.getElementsByClassName("minimize")[0];
-//   minimize.onclick = function() {
-//     modal.moveTo(0, 0);
-//   };
-// };
+  console.log(title);
+}

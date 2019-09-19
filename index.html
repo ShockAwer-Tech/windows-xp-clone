@@ -14,7 +14,10 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css?family=Manjari|Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Manjari|Roboto&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style></style>
@@ -30,37 +33,49 @@
         <a href="#" class="right" id="time-section"></a>
         <a href="#" class="right">ENG</a>
       </div>
+      <!-- start menu dropdown -->
       <div id="myDropdown" class="dropdown-content">
         <div class="windows-grid-container">
-          <a class="grid-item" id="word" onclick="openWord()">MS Word</a>
-          <a class="grid-item" onclick="openWindow()">Excel</a>
-          <a class="grid-item">Calculator</a>
-          <a class="grid-item">Powerpoint</a>
-          <a class="grid-item" onclick="setdropdown()">Settings</a>
-          <a class="grid-item">VS Code</a>
-          <a class="grid-item">Mail</a>
-          <a class="grid-item">Utilities</a>
-          <a class="grid-item">Games</a>
+          <a class="grid-item" id="Word">MS Word</a>
+          <a class="grid-item" id="Excel">Excel</a>
+          <a class="grid-item" id="Calculator">Calculator</a>
+          <a class="grid-item" id="Powerpoint">Powerpoint</a>
+          <a class="grid-item" id="Note">Notes</a>
+          <a class="grid-item" id="Calendar">Calendar</a>
+          <a class="grid-item" id="Mail">Mail</a>
+          <a class="grid-item" id="Utilities">Utilities</a>
+          <a class="grid-item" id="Games">Games</a>
         </div>
       </div>
+      <!-- end start menu dropdwon -->
 
-      <div id="wordModal" class="modal">
-        <div class="word-content">
-          <div class="word-header">
-            <div>
-                <span class="close">&times;</span>
-                <span class="maximize">&plus;</span>
-                <span class="minimize">&minus;</span>
-            </div>
-            <h2>Word</h2>
+      <!-- word view -->
+      <div id="windowDropdown" class="word-content callout" draggable="true">
+        <div class="wordBox">
+          <div>
+            <span class=""
+              ><i class="far fa-file-word" style="color:#339af0"></i
+            ></span>
           </div>
-          <div class="word-body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
+          <div><span id="pageTitle"></span></div>
+          <div class="window-buttons">
+            <span class="dot min" id="minimize"></span>
+            <span class="dot max" id="maximize"></span>
+            <span class="dot close" id="closeButton"></span>
           </div>
-        
+        </div>
+        <div class="menubar">
+          <div class="navbar">
+            <a href="#"> File</a>
+            <a href="#"> Edit</a>
+            <a href="#"> Insert</a>
+          </div>
+        </div>
+        <div class="inputSection">
+          <textarea rows="22" name="description"> </textarea><br />
         </div>
       </div>
+      <!-- end word view -->
 
       <div id="setDropdown" class="setdropdown-content callout">
         <div class="box">
@@ -79,22 +94,26 @@
 
         <div class="box box-one">
           <div>
-            <span class=""><i class="fas fa-home icon home"></i></i>
+            <span class=""
+              ><i class="fas fa-home icon home"></i>
               <p>General</p>
             </span>
           </div>
           <div>
-            <span class=""><i class="fas fa-volume-down icon silver"></i>
+            <span class=""
+              ><i class="fas fa-volume-down icon silver"></i>
               <p>Sound</p>
             </span>
           </div>
           <div>
-            <span><i class="fab fa-bluetooth icon bluetooth"></i>
+            <span
+              ><i class="fab fa-bluetooth icon bluetooth"></i>
               <p>Bluetooth</p>
             </span>
           </div>
           <div>
-            <span class=""><i class="fas fa-laptop icon theme"></i>
+            <span class=""
+              ><i class="fas fa-laptop icon theme"></i>
               <p>Theme</p>
             </span>
           </div>
@@ -102,22 +121,26 @@
 
         <div class="box box-two">
           <div>
-            <span class=""><i class="fas fa-desktop icon desktop"></i>
+            <span class=""
+              ><i class="fas fa-desktop icon desktop"></i>
               <p>Desktop</p>
             </span>
           </div>
           <div>
-            <span class=""><i class="fas fa-keyboard icon keyboard"></i>
+            <span class=""
+              ><i class="fas fa-keyboard icon keyboard"></i>
               <p>Keyboard</p>
             </span>
           </div>
           <div>
-            <span class=""><i class="fas fa-search icon"></i>
-             <p>Search</p>
+            <span class=""
+              ><i class="fas fa-search icon"></i>
+              <p>Search</p>
             </span>
           </div>
           <div>
-            <span><i class="fas fa-hdd icon silver"></i>
+            <span
+              ><i class="fas fa-hdd icon silver"></i>
               <p>System</p>
             </span>
           </div>
@@ -125,24 +148,30 @@
 
         <div class="box box-three">
           <div>
-            <span class=""><i class="fas fa-users icon silver"></i>
+            <span class=""
+              ><i class="fas fa-users icon silver"></i>
               <p>User Accounts</p>
             </span>
           </div>
           <div>
-            <span class=""><i class="fas fa-language icon language"></i>
-              <p>Region &
+            <span class=""
+              ><i class="fas fa-language icon language"></i>
+              <p>
+                Region &
                 <br />
-                Language</p>
+                Language
+              </p>
             </span>
           </div>
           <div>
-            <span><i class="fas fa-font icon silver"></i>
+            <span
+              ><i class="fas fa-font icon silver"></i>
               <p>Fonts</p>
             </span>
           </div>
           <div>
-            <span><i class="fas fa-folder-open icon folder"></i>
+            <span
+              ><i class="fas fa-folder-open icon folder"></i>
               <p>Folders</p>
             </span>
           </div>
@@ -150,12 +179,14 @@
 
         <div class="box box-four">
           <div>
-            <span class=""><i class="fas fa-broadcast-tower icon silver"></i>
+            <span class=""
+              ><i class="fas fa-broadcast-tower icon silver"></i>
               <p>Power Options</p>
             </span>
           </div>
           <div>
-            <span class=""><i class="fas fa-universal-access icon accessibility"></i>
+            <span class=""
+              ><i class="fas fa-universal-access icon accessibility"></i>
               <p>Accessibility</p>
             </span>
           </div>
@@ -192,8 +223,12 @@
         <p>Recycle Bin</p>
       </div>
     </div>
-    <section id="recycle-bin-window" class="recycle-window-style" style="display: none;">
-      <div class="recycle-window-style-content-wrapper-header" >
+    <section
+      id="recycle-bin-window"
+      class="recycle-window-style"
+      style="display: none;"
+    >
+      <div class="recycle-window-style-content-wrapper-header">
         <div class="close-button">
           <a id="close-button" href="#"><i class="fas fa-times"></i></a>
         </div>
@@ -204,8 +239,14 @@
       <div class="recycle-window-style-content-wrapper">
         <div class="recycle-window-style-content-left-pane">
           <div class="nav">
-            <a href="#"><i class="fas fa-desktop"></i>&nbsp;&nbsp;<span>Desktop</span> </a>
-            <a href="#">&nbsp;<i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;<span>My Doduments</span> </a>
+            <a href="#"
+              ><i class="fas fa-desktop"></i>&nbsp;&nbsp;<span>Desktop</span>
+            </a>
+            <a href="#"
+              >&nbsp;<i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;<span
+                >My Doduments</span
+              >
+            </a>
           </div>
         </div>
         <div class="recycle-window-style-content-right-pane">

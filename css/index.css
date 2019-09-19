@@ -90,7 +90,6 @@ p {
   position: absolute;
   content: left;
   background-color: #f1f1f1;
-
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -148,7 +147,6 @@ p {
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .setdropdown-content a {
   color: black;
   margin-top: 10px;
@@ -162,20 +160,22 @@ p {
   display: block;
 }
 
-.modal {
+#windowDropdown {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  float: left;
-  width: 50%;
-  height: 100%;
-  margin: 10px;
+  width: 40%;
+  height: 80%;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: move;
 }
 @-webkit-keyframes animatetop {
   from {
-    top: -300px;
+    top: -500px;
     opacity: 0;
   }
   to {
@@ -194,16 +194,16 @@ p {
     opacity: 1;
   }
 }
-.word-header {
-  padding: 1px 10px;
-  background-color: #2980b9;
-  color: white;
-  text-align: center;
+.wordBox {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: 10px;
 }
 
 .word-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: #ffffff;
   margin: auto;
   padding: 0;
   border: 1px solid #888;
@@ -214,45 +214,11 @@ p {
   animation-name: animatetop;
   animation-duration: 0.4s;
 }
-
-.word-body {
-  padding: 2px 16px;
+.inputSection {
+  margin: 5px;
 }
-.icons {
-  align-content: space-between;
-  justify-content: space-between;
-}
-/* The Close Button */
-.close {
-  color: #ffffff;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.minimize {
-  color: #fff;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.maximize {
-  color: #fff;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.minimize:focus {
-  color: #aaa;
-  text-decoration: none;
-  cursor: pointer;
-  background: rgb(219, 219, 219);
-}
-
-.close:hover,
-.close:focus {
-  color: #aaa;
-  text-decoration: none;
-  cursor: pointer;
-  background: rgb(219, 219, 219);
+textarea {
+  width: 92%;
+  height: 100%;
+  padding: 20px;
 }
