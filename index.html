@@ -25,9 +25,7 @@
         <a href="#" onclick="dropdown()" class="dropbtn"
           ><i class="fab fa-windows"></i> Start</a
         >
-        <a href="#" onclick="setdropdown()"
-          ><i class="fas fa-cog"></i> Settings</a
-        >
+        <a href="#" id="settings"><i class="fas fa-cog"></i> Settings</a>
         <a href="#" class="right" id="date-section"></a>
         <a href="#" class="right" id="time-section"></a>
         <a href="#" class="right">ENG</a>
@@ -64,7 +62,7 @@
         </div>
       </div>
 
-      <div id="setDropdown" class="setdropdown-content">
+      <div id="setDropdown" class="setdropdown-content callout">
         <div class="box">
           <div>
             <span class=""><i class="fas fa-cog"></i></span>
@@ -74,8 +72,8 @@
           </div>
           <div class="window-buttons">
             <span class="dot min"></span>
-            <span class="dot max"></span>
-            <span class="dot close" id="close" onclick="minimize();"><i></i></span>
+            <span class="dot max" id="max"></span>
+            <span class="dot close" id="close"><i></i></span>
           </div>
         </div>
 

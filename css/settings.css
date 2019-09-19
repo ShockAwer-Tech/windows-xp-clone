@@ -9,7 +9,6 @@
 .box-one,
 .box-three {
   background: #ebf8ff;
-  flex: 1;
 }
 
 .box-one,
@@ -26,19 +25,19 @@
   border-radius: 50%;
   display: inline-block;
   margin: 5px;
-}
-
-.min:hover {
-  background-color: #bbb;
-}
-
-.max:hover {
-  background-color: yellow;
-  visibility: visible;
+  cursor: pointer;
 }
 
 .close:hover {
-  background-color: red;
+  background-color: #ed594a;
+}
+
+.max:hover {
+  background-color: #fdd800;
+}
+
+.min:hover {
+  background-color: #5ac05a;
   visibility: visible;
 }
 
@@ -63,4 +62,11 @@
 
 .silver {
   color: #bbb;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
 }
