@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Windows Xp</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/settings.css" />
     <link rel="stylesheet" href="css/recycle-bin.css" />
     <link
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -24,9 +25,7 @@
         <a href="#" onclick="dropdown()" class="dropbtn"
           ><i class="fab fa-windows"></i> Start</a
         >
-        <a href="#" onclick="setdropdown()"
-          ><i class="fas fa-cog"></i> Settings</a
-        >
+        <a href="#" id="settings"><i class="fas fa-cog"></i> Settings</a>
         <a href="#" class="right" id="date-section"></a>
         <a href="#" class="right" id="time-section"></a>
         <a href="#" class="right">ENG</a>
@@ -63,7 +62,7 @@
         </div>
       </div>
 
-      <div id="setDropdown" class="setdropdown-content">
+      <div id="setDropdown" class="setdropdown-content callout">
         <div class="box">
           <div>
             <span class=""><i class="fas fa-cog"></i></span>
@@ -72,51 +71,99 @@
             <span class="">Settings</span>
           </div>
           <div class="window-buttons">
-            <span class="dot min"></span>
-            <span class="dot max"></span>
-            <span class="dot close"><i></i></span>
+            <span class="dot min" id="min"></span>
+            <span class="dot max" id="max"></span>
+            <span class="dot close" id="close"><i></i></span>
           </div>
         </div>
 
         <div class="box box-one">
           <div>
-            <span class=""><i class="fas fa-cog"></i></span>
+            <span class=""><i class="fas fa-home icon home"></i></i>
+              <p>General</p>
+            </span>
           </div>
           <div>
-            <span class="">Settings</span>
+            <span class=""><i class="fas fa-volume-down icon silver"></i>
+              <p>Sound</p>
+            </span>
           </div>
-          <div class="window-buttons">
-            <span class="dot min"></span>
-            <span class="dot max"></span>
-            <span class="dot close"><i></i></span>
+          <div>
+            <span><i class="fab fa-bluetooth icon bluetooth"></i>
+              <p>Bluetooth</p>
+            </span>
+          </div>
+          <div>
+            <span class=""><i class="fas fa-laptop icon theme"></i>
+              <p>Theme</p>
+            </span>
           </div>
         </div>
 
         <div class="box box-two">
           <div>
-            <span class=""><i class="fas fa-cog"></i></span>
+            <span class=""><i class="fas fa-desktop icon desktop"></i>
+              <p>Desktop</p>
+            </span>
           </div>
           <div>
-            <span class="">Settings</span>
+            <span class=""><i class="fas fa-keyboard icon keyboard"></i>
+              <p>Keyboard</p>
+            </span>
           </div>
-          <div class="window-buttons">
-            <span class="dot min"></span>
-            <span class="dot max"></span>
-            <span class="dot close"><i></i></span>
+          <div>
+            <span class=""><i class="fas fa-search icon"></i>
+             <p>Search</p>
+            </span>
+          </div>
+          <div>
+            <span><i class="fas fa-hdd icon silver"></i>
+              <p>System</p>
+            </span>
           </div>
         </div>
 
         <div class="box box-three">
           <div>
-            <span class=""><i class="fas fa-cog"></i></span>
+            <span class=""><i class="fas fa-users icon silver"></i>
+              <p>User Accounts</p>
+            </span>
           </div>
           <div>
-            <span class="">Settings</span>
+            <span class=""><i class="fas fa-language icon language"></i>
+              <p>Region &
+                <br />
+                Language</p>
+            </span>
           </div>
-          <div class="window-buttons">
-            <span class="dot min"></span>
-            <span class="dot max"></span>
-            <span class="dot close"><i></i></span>
+          <div>
+            <span><i class="fas fa-font icon silver"></i>
+              <p>Fonts</p>
+            </span>
+          </div>
+          <div>
+            <span><i class="fas fa-folder-open icon folder"></i>
+              <p>Folders</p>
+            </span>
+          </div>
+        </div>
+
+        <div class="box box-four">
+          <div>
+            <span class=""><i class="fas fa-broadcast-tower icon silver"></i>
+              <p>Power Options</p>
+            </span>
+          </div>
+          <div>
+            <span class=""><i class="fas fa-universal-access icon accessibility"></i>
+              <p>Accessibility</p>
+            </span>
+          </div>
+          <div>
+            <span></span>
+          </div>
+          <div>
+            <span></span>
           </div>
         </div>
       </div>
@@ -145,7 +192,7 @@
         <p>Recycle Bin</p>
       </div>
     </div>
-    <section id="recycle-bin-window" class="recycle-window-style" style="display: nne;">
+    <section id="recycle-bin-window" class="recycle-window-style" style="display: none;">
       <div class="recycle-window-style-content-wrapper-header" >
         <div class="close-button">
           <a id="close-button" href="#"><i class="fas fa-times"></i></a>
