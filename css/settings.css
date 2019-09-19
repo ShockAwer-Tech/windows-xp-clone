@@ -1,0 +1,72 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  /*outline: 1px solid red; */
+  margin: 10px;
+}
+
+.box-one,
+.box-three {
+  background: #ebf8ff;
+}
+
+.box-one,
+.box-two,
+.box-three,
+.box-four {
+  padding: 15px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: #ed594a;
+}
+
+.max:hover {
+  background-color: #fdd800;
+}
+
+.min:hover {
+  background-color: #5ac05a;
+  visibility: visible;
+}
+
+.icon {
+  font-size: 30px;
+  text-align: center;
+}
+
+.bluetooth,
+.accessibility,
+.language,
+.home,
+.desktop {
+  color: dodgerblue;
+}
+
+.folder,
+.keyboard,
+.theme {
+  color: goldenrod;
+}
+
+.silver {
+  color: #bbb;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
