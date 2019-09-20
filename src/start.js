@@ -1,16 +1,8 @@
+// start menu dropdown
 dropdown = () => {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("startDropdown").classList.toggle("show");
 };
 
-// openWindow = () => {
-//   testwindow = window.open(
-//     "",
-//     "",
-//     "location=1,status=1,scrollbars=1,width=400, height=450,float=right"
-//   );
-//   testwindow.moveTo(0, 0);
-// };
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -24,38 +16,86 @@ window.onclick = function(event) {
   }
 };
 
-openWord = () => {
-  var modal = document.getElementById("wordModal");
+//dropdown for all tabs
+let wordTab = document.getElementById("Word");
+let excelTab = document.getElementById("Excel");
+let calculatorTab = document.getElementById("Calculator");
+let calendarTab = document.getElementById("Calendar");
 
-  // Get the button that opens the modal
-  var btn = document.getElementById("word");
+let newWindow = document.getElementById("windowDropdown");
+let calendar = document.getElementById("calendar");
+let calculator = document.getElementById("calculator");
+let maximize = document.getElementById("maximize");
+let minimize = document.getElementById("minimize");
+let buttonClose = document.getElementById("closeButton");
+let closed = document.getElementById("closeBut");
 
-  // Get the <span> element that closes the modal
-  let close = document.getElementsByClassName("close")[0];
-  let minimize = document.getElementsByClassName("minimize");
+function openWord() {
+  if (newWindow.style.display === "none") {
+    newWindow.style.display = "block";
+  } else {
+    newWindow.style.display = "none";
+  }
+}
+wordTab.addEventListener("click", openWord);
 
-  // When the user clicks on the button, open the modal
-  btn.onclick = function() {
-    modal.style.display = "block";
-  };
+function openExcel() {
+  if (newWindow.style.display === "none") {
+    newWindow.style.display = "block";
+  } else {
+    newWindow.style.display = "none";
+  }
+}
+excelTab.addEventListener("click", openExcel);
 
-  // When the user clicks on <span> (x), close the modal
+function openCalendar() {
+  if (calendar.style.display === "none") {
+    calendar.style.display = "block";
+  } else {
+    calendar.style.display = "none";
+  }
+}
+calendarTab.addEventListener("click", openCalendar);
 
-  close.onclick = function() {
-    modal.style.display = "none";
-  };
+function openCalculator() {
+  if (calculator.style.display === "none") {
+    calculator.style.display = "block";
+  } else {
+    calculator.style.display = "none";
+  }
+}
+calculatorTab.addEventListener("click", openCalculator);
 
-  minimize.onclick = function() {
-    modal.style.display.resizeTo(250, 250);
-  };
-  maximize.onclick = function() {
-    modal.style.display.resizeTo(250, 250);
-  };
+maximize.addEventListener("click", function() {
+  if (
+    newWindow.style.minWidth !== "99.2%" &&
+    newWindow.style.minHeight !== "96%"
+  ) {
+    newWindow.style.minWidth = "99.2%";
+    newWindow.style.minHeight = "96%";
+  } else {
+    newWindow.style.minWidth = "500px";
+    newWindow.style.minHeight = "500px";
+  }
+});
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-};
+minimize.addEventListener("click", function() {
+  if (
+    newWindow.style.minWidth !== "500px" &&
+    newWindow.style.minHeight !== "500px"
+  ) {
+    newWindow.style.minWidth = "500px";
+    newWindow.style.minHeight = "500px";
+  }
+});
+buttonClose.addEventListener("click", function() {
+  newWindow.style.display = "none";
+  calculator.style.display = "none";
+});
+
+function getPageTitle() {
+  let title = document.getAttribute("id");
+  document.getElementById("pageTitle").innerHTML = title;
+
+  console.log(title);
+}
