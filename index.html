@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Windows Xp</title>
     <link rel="stylesheet" href="css/index.css" />
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/recycle-bin.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Manjari|Roboto&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style></style>
-  </head>
-  <body>
-    <div>
-      <div class="navbar">
-        <a href="#" onclick="dropdown()" class="dropbtn"
-          ><i class="fab fa-windows"></i> Start</a
+</head>
+
+<body>
+    <div ondrop="drop(event)" id="main-container" ondragover="allowDrop(event)">
+        <div class="navbar">
+            <a href="#" onclick="dropdown()" class="dropbtn"><i class="fab fa-windows"></i> Start</a
         >
         <a href="#"><i class="fas fa-cog"></i> Settings</a>
         <a href="#" class="right" id="test">17/09/2019</a>
@@ -38,43 +37,213 @@
           <a class="grid-item">Mail</a>
           <a class="grid-item">Utilities</a>
           <a class="grid-item">Games</a>
+        <a href="#" id="settings"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="right" id="date-section"></a>
+            <a href="#" class="right" id="time-section"></a>
+            <a href="#" class="right">ENG</a>
         </div>
-      </div>
+        <div id="myDropdown" class="dropdown-content">
+            <div class="windows-grid-container">
+                <a class="grid-item" id="word" onclick="openWord()">MS Word</a>
+                <a class="grid-item" onclick="openWord()">Excel</a>
+                <a class="grid-item">Calculator</a>
+                <a class="grid-item">Powerpoint</a>
+                <a class="grid-item" onclick="setdropdown()">Settings</a>
+                <a class="grid-item">VS Code</a>
+                <a class="grid-item">Mail</a>
+                <a class="grid-item">Utilities</a>
+                <a class="grid-item">Games</a>
+            </div>
 
-      <div id="setDropdown" class="setdropdown-content">
-        <div class="windows-grid-container box">
-          <div>
-            <span class="">MS Word</span>
-          </div>
-          <div>
-            <span class="close">x</span>
-          </div>
-          <div>
-            <span class="icon max">x</span>
-            <i class="fas fa-times"></i>
-            <i class="fas fa-times"></i>
-          </div>
+            <div id="wordModal" class="modal">
+                <div class="word-content">
+                    <div class="word-header">
+                        <div>
+                            <span class="close">&times;</span>
+                            <span class="maximize">&plus;</span>
+                            <span class="minimize">&minus;</span>
+                        </div>
+                        <h2>Word</h2>
+                    </div>
+                    <div class="word-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="setDropdown" class="setdropdown-content callout">
+                <div class="box">
+                    <div>
+                        <span class=""><i class="fas fa-cog"></i></span>
+                    </div>
+                    <div>
+                        <span class="">Settings</span>
+                    </div>
+                    <div class="window-buttons">
+                        <span class="dot min" id="min"></span>
+                        <span class="dot max" id="max"></span>
+                        <span class="dot close" id="close"><i></i></span>
+                    </div>
+                </div>
+
+                <div class="box box-one">
+                    <div>
+                        <span class=""><i class="fas fa-home icon home"></i>
+              <p>General</p>
+            </span>
+                    </div>
+                    <div>
+                        <span class=""><i class="fas fa-volume-down icon silver"></i>
+              <p>Sound</p>
+            </span>
+                    </div>
+                    <div>
+                        <span><i class="fab fa-bluetooth icon bluetooth"></i>
+              <p>Bluetooth</p>
+            </span>
+                    </div>
+                    <div>
+                        <span class=""><i class="fas fa-laptop icon theme"></i>
+              <p>Theme</p>
+            </span>
+                    </div>
+                </div>
+
+                <div class="box box-two">
+                    <div>
+                        <span class=""><i class="fas fa-desktop icon desktop"></i>
+              <p>Desktop</p>
+              <a href="theme.html"><p>Desktop</p></a>
+            </span>
+                    </div>
+                    <div>
+                        <span class=""><i class="fas fa-keyboard icon keyboard"></i>
+              <p>Keyboard</p>
+            </span>
+                    </div>
+                    <div>
+                        <span class=""><i class="fas fa-search icon"></i>
+             <p>Search</p>
+            </span>
+                    </div>
+                    <div>
+                        <span><i class="fas fa-hdd icon silver"></i>
+              <p>System</p>
+            </span>
+                    </div>
+                </div>
+
+                <div class="box box-three">
+                    <div>
+                        <span class=""><i class="fas fa-users icon silver"></i>
+              <p>User Accounts</p>
+            </span>
+                    </div>
+                    <div>
+                        <span class=""><i class="fas fa-language icon language"></i>
+              <p>Region &
+                <br />
+                Language</p>
+            </span>
+                    </div>
+                    <div>
+                        <span><i class="fas fa-font icon silver"></i>
+              <p>Fonts</p>
+            </span>
+                    </div>
+                    <div>
+                        <span><i class="fas fa-folder-open icon folder"></i>
+              <p>Folders</p>
+            </span>
+                    </div>
+                </div>
+
+                <div class="box box-four">
+                    <div>
+                        <span class=""><i class="fas fa-broadcast-tower icon silver"></i>
+              <p>Power Options</p>
+            </span>
+                    </div>
+                    <div>
+                        <span class=""><i class="fas fa-universal-access icon accessibility"></i>
+              <p>Accessibility</p>
+            </span>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="desktop">
-      <div class="grid-container">
-        <button href="#" class="right">
-          <i class="far fa-trash-alt"></i>
-          <p>Recycle</p>
-        </button>
-        <button href="#" class="right">
-          <i class="fab fa-chrome"></i>
-          <p>Chrome</p>
-        </button>
-        <button href="#" class="right">
-          <i class="far fa-folder-open" style="transform:rotate(90deg)"> </i>
-          <p>My Documents</p>
-        </button>
-      </div>
-    </div>
-    <script src="src/start.js"></script>
-    <script type="text/javascript" src="src/date-time.js"></script>
-  </body>
+        <div id="outerContainer" ondrop="drop(event)" ondragover="allowDrop(event)" class="desktop">
+            <div id="innerContainer" ondrop="drop(event)" ondragover="allowDrop(event)" class="desktop">
+                <div class="desktop" ondrop="drop(event)" ondragover="allowDrop(event)" id="trash container">
+                    <div class="grid-container" id="source container">
+                        <button href="#" class="right" draggable="true" id="recycle-bin-button" ondragstart="drag(event)">
+                        <i class="far fa-trash-alt"></i>
+                        <p>Recycle</p>
+                        </button>
+                        <button href="#" class="right">
+                        <i class="fab fa-chrome"></i>
+                        <p>Chrome</p>
+                        </button>
+                        <button href="#" class="right">
+                        <i class="far fa-folder-open" style="transform:rotate(90deg)"> </i>
+                        <p>My Documents</p>
+                        </button>
+                    </div>
+                </div>
+                <!-- Recycle Bin window -->
+                <section id="recycle-bin-window" class="recycle-window-style hide">
+                    <div class="recycle-window-style-content-wrapper-header">
+                        <p>&nbsp;</p>
+                        <div class="window-title">
+                            <p style="color: #fff; text-align: center">Recycle Bin</p>
+                        </div>
+                        <div class="window-controls">
+                            <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
+                            <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
+                        </div>
+                    </div>
+                    <div class="recycle-window-style-content-wrapper">
+                        <div class="recycle-window-style-content-left-pane">
+                            <div class="nav">
+                                <a href="#"><i class="fas fa-desktop"></i>&nbsp;&nbsp;<span>Desktop</span> </a>
+                                <a href="#">&nbsp;<i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;<span>My Doduments</span> </a>
+                            </div>
+                        </div>
+                        <div class="recycle-window-style-content-right-pane">
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spacer-50px"></div>
+                    <div id="recycle-tab" class="tab-size hide">
+                        <div class="window-title">
+                            <p style="color: #fff; text-align: center">Recycle Bin</p>
+                        </div>
+                        <!-- <div class="window-controls">
+                            <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
+                            <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
+                        </div> -->
+                    </div>
+                </section>
+                <!-- Recycle Bin -->
+            </div>
+        </div>
+        </div>
+        </div>
+        <script type="text/javascript" src="src/start.js"></script>
+        <script type="text/javascript" src="src/settings.js"></script>
+        <script type="text/javascript" src="src/date-time.js"></script>
+        <script type="text/javascript" src="src/recycle-bin.js"></script>
+</body>
+
 </html>
