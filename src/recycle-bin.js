@@ -1,16 +1,33 @@
 var recycleBinButton = document.getElementById("recycle-bin-button");
 var recycleBinWindow = document.getElementById("recycle-bin-window");
-
-recycleBinButton.addEventListener("click", function() {
-  if(recycleBinWindow.style.display === "none"){
-  	recycleBinWindow.style.display = "block";
-  }else {
-  	recycleBinWindow.style.display = "none";
-  }
-});
-
 var closeButton = document.getElementById("close-button");
+var tab, minButton;
+minButton = document.getElementById("min-button");
 
-closeButton.addEventListener("click", function(){
-	recycleBinWindow.style.display = "none";
-})
+recycleBinButton.onclick = openWindow;
+minButton.onclick = minWindow;
+closeButton.onclick = closeWindow;
+
+// This function opens the recycle bin window
+function openWindow() {
+    if (recycleBinWindow.classList.contains("hide")) {
+        recycleBinWindow.classList.remove("hide");
+    } else {
+        recycleBinWindow.classList.add("hide");
+    }
+}
+
+// This function closes the recycle bin window
+function closeWindow() {
+    recycleBinWindow.style.display = "none";
+}
+
+// This function minimizes the recycle bin window
+function minWindow() {
+    tab = document.getElementById("recycle-tab");
+    if (tab.classList.contains("hide")) {
+        tab.classList.remove("hide");
+    } else {
+        tab.classList.add("hide");
+    }
+}
