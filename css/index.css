@@ -32,7 +32,18 @@ body {
   padding: 12px 10px;
   text-decoration: none;
 }
-
+.menubar {
+  overflow: hidden;
+  background-color: #1b507c;
+}
+.menubar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 10px;
+  text-decoration: none;
+}
 .navbar a.right {
   float: right;
   padding: 12px 14px;
@@ -175,7 +186,6 @@ p {
   margin: 5px;
   border-radius: 5px;
   background-color: #fff;
-  cursor: move;
 }
 @-webkit-keyframes animatetop {
   from {
@@ -232,6 +242,11 @@ textarea {
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  -khtml-user-drag: element;
   -webkit-user-drag: element;
+}
+iframe {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
 }

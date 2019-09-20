@@ -38,10 +38,12 @@
         <div class="windows-grid-container">
           <a class="grid-item" id="Word">MS Word</a>
           <a class="grid-item" id="Excel">Excel</a>
-          <a class="grid-item" id="Calculator">Calculator</a>
+          <a class="grid-item" target="calculator" id="Calculator"
+            >Calculator</a
+          >
           <a class="grid-item" id="Powerpoint">Powerpoint</a>
           <a class="grid-item" id="Note">Notes</a>
-          <a class="grid-item" id="Calendar">Calendar</a>
+          <a class="grid-item" target="calendar" id="Calendar">Calendar</a>
           <a class="grid-item" id="Mail">Mail</a>
           <a class="grid-item" id="Utilities">Utilities</a>
           <a class="grid-item" id="Games">Games</a>
@@ -50,6 +52,7 @@
       <!-- end start menu dropdwon -->
 
       <!-- word view -->
+
       <div id="windowDropdown" class="word-content callout" draggable="true">
         <div class="wordBox">
           <div>
@@ -65,7 +68,7 @@
           </div>
         </div>
         <div class="menubar">
-          <div class="navbar">
+          <div class="">
             <a href="#"> File</a>
             <a href="#"> Edit</a>
             <a href="#"> Insert</a>
@@ -76,7 +79,28 @@
         </div>
       </div>
       <!-- end word view -->
-
+      <iframe
+        width="500"
+        height="400"
+        src="calculator.html"
+        name="calculator"
+        id="calculator"
+        frameborder="0"
+      ></iframe>
+      <iframe
+        width="500"
+        height="400"
+        src="calendar.html"
+        name="calendar"
+        id="calendar"
+        frameborder="0"
+      >
+        <div class="window-buttons" style="float: right">
+          <span class="dot min" id="mini"></span>
+          <span class="dot max" id="maxi"></span>
+          <span class="dot close" id="closeBut"><i></i></span></div
+      ></iframe>
+      <!-- section for settings -->
       <div id="setDropdown" class="setdropdown-content callout">
         <div class="box">
           <div>
@@ -200,7 +224,9 @@
         </div>
       </div>
     </div>
+    <!-- end settings -->
 
+    <!-- desktop icons -->
     <div
       id="outerContainer"
       ondrop="drop(event)"
@@ -241,6 +267,7 @@
             </button>
           </div>
         </div>
+        <!-- end desktop icons -->
         <!-- Recycle Bin -->
         <div class="recycle-bin-style" id="recycle-bin-button">
           <div class="recycle-bin-content">
@@ -252,8 +279,6 @@
           id="recycle-bin-window"
           class="recycle-window-style"
           style="display: none;"
-          ondrop="drop(event)"
-          ondragover="allowDrop(event)"
         >
           <div class="recycle-window-style-content-wrapper-header">
             <div class="close-button">
@@ -290,6 +315,8 @@
     <!-- Recycle Bin -->
     <script type="text/javascript" src="src/start.js"></script>
     <script type="text/javascript" src="src/settings.js"></script>
+    <script src="src/desktop.js"></script>
+    <script src="src/calendar.js"></script>
     <script type="text/javascript" src="src/date-time.js"></script>
     <script type="text/javascript" src="src/recycle-bin.js"></script>
   </body>
