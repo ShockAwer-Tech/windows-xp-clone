@@ -84,8 +84,8 @@
 
 .recycle-window-style {
     position: relative;
-    left: 150px;
-    top: -20px;
+    left: 10px;
+    /* top: 100px; */
     /* resize: both;
     overflow: auto; */
 }

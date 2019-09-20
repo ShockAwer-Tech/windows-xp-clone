@@ -169,53 +169,59 @@
             <div id="innerContainer" ondrop="drop(event)" ondragover="allowDrop(event)" class="desktop">
                 <div class="desktop" ondrop="drop(event)" ondragover="allowDrop(event)" id="trash container">
                     <div class="grid-container" id="source container">
-                        <button href="#" class="right" draggable="true" id='trash' ondragstart="drag(event)">
-              <i class="far fa-trash-alt"></i>
-              <p>Recycle</p>
-            </button>
-                        <button href="#" class="right">
-              <i class="fab fa-chrome"></i>
-              <p>Chrome</p>
-            </button>
-                        <button href="#" class="right">
-              <i class="far fa-folder-open" style="transform:rotate(90deg)"> </i>
-              <p>My Documents</p>
-            </button>
-                    </div>
-                </div>
-                <!-- Recycle Bin -->
-                <div class="recycle-bin-style" id="recycle-bin-button">
-                    <div class="recycle-bin-content">
+                        <button href="#" class="right" draggable="true" id='recycle-bin-button' ondragstart="drag(event)">
                         <i class="far fa-trash-alt"></i>
-                        <p>Recycle Bin</p>
+                        <p>Recycle</p>
+                        </button>
+                        <button href="#" class="right">
+                        <i class="fab fa-chrome"></i>
+                        <p>Chrome</p>
+                        </button>
+                        <button href="#" class="right">
+                        <i class="far fa-folder-open" style="transform:rotate(90deg)"> </i>
+                        <p>My Documents</p>
+                        </button>
                     </div>
                 </div>
-                <section id="recycle-bin-window" class="recycle-window-style" style="display: none;" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <!-- Recycle Bin window -->
+                <section id="recycle-bin-window" class="recycle-window-style hide">
                     <div class="recycle-window-style-content-wrapper-header">
-                        <div class="close-button">
-                            <a id="close-button" href="#"><i class="fas fa-times"></i></a>
+                        <p>&nbsp;</p>
+                        <div class="window-title">
+                            <p style="color: #fff; text-align: center">Recycle Bin</p>
                         </div>
-                        <div class="min-button">
-                            <a id="min-button" href="#"><i class="fas fa-minus"></i></a>
+                        <div class="window-controls">
+                            <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
+                            <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
                         </div>
                     </div>
                     <div class="recycle-window-style-content-wrapper">
                         <div class="recycle-window-style-content-left-pane">
                             <div class="nav">
                                 <a href="#"><i class="fas fa-desktop"></i>&nbsp;&nbsp;<span>Desktop</span> </a>
-                                <a href="#">&nbsp;<i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;<span>My Documents</span> </a>
+                                <a href="#">&nbsp;<i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;<span>My Doduments</span> </a>
                             </div>
                         </div>
                         <div class="recycle-window-style-content-right-pane">
                             <div>
-                                <!-- <button id="test-button">Click me</button> -->
                             </div>
                         </div>
                     </div>
+
+                    <div class="spacer-50px"></div>
+                    <div id="recycle-tab" class="tab-size hide">
+                        <div class="window-title">
+                            <p style="color: #fff; text-align: center">Recycle Bin</p>
+                        </div>
+                        <div class="window-controls">
+                            <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
+                            <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
+                        </div>
+                    </div>
                 </section>
+                <!-- Recycle Bin -->
             </div>
         </div>
-        <!-- Recycle Bin -->
         <script type="text/javascript" src="src/start.js"></script>
         <script type="text/javascript" src="src/settings.js"></script>
         <script type="text/javascript" src="src/date-time.js"></script>
