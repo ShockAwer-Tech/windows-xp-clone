@@ -20,8 +20,8 @@
     />
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <style></style>
   </head>
+
   <body>
     <div ondrop="drop(event)" id="main-container" ondragover="allowDrop(event)">
       <div class="navbar">
@@ -30,11 +30,11 @@
         >
         <a href="#" id="settings"><i class="fas fa-cog"></i> Settings</a>
         <a href="#" class="right" id="date-section"></a>
-        <a href="#" class="right" id="time-section"></a>
+        <a href="#" class="right" id="timesection"></a>
         <a href="#" class="right">ENG</a>
       </div>
       <!-- start menu dropdown -->
-      <div id="myDropdown" class="dropdown-content">
+      <div id="startDropdown" class="dropdown-content">
         <div class="windows-grid-container">
           <a class="grid-item" id="Word">MS Word</a>
           <a class="grid-item" id="Excel">Excel</a>
@@ -224,9 +224,7 @@
         </div>
       </div>
     </div>
-    <!-- end settings -->
 
-    <!-- desktop icons -->
     <div
       id="outerContainer"
       ondrop="drop(event)"
@@ -250,7 +248,7 @@
               href="#"
               class="right"
               draggable="true"
-              id="trash"
+              id="recycle-bin-button"
               ondragstart="drag(event)"
             >
               <i class="far fa-trash-alt"></i>
@@ -267,25 +265,20 @@
             </button>
           </div>
         </div>
-        <!-- end desktop icons -->
-        <!-- Recycle Bin -->
-        <div class="recycle-bin-style" id="recycle-bin-button">
-          <div class="recycle-bin-content">
-            <i class="far fa-trash-alt"></i>
-            <p>Recycle Bin</p>
-          </div>
-        </div>
-        <section
-          id="recycle-bin-window"
-          class="recycle-window-style"
-          style="display: none;"
-        >
+        <!-- Recycle Bin window -->
+        <section id="recycle-bin-window" class="recycle-window-style hide">
           <div class="recycle-window-style-content-wrapper-header">
-            <div class="close-button">
-              <a id="close-button" href="#"><i class="fas fa-times"></i></a>
+            <p>&nbsp;</p>
+            <div class="window-title">
+              <p style="color: #fff; text-align: center">Recycle Bin</p>
             </div>
-            <div class="min-button">
-              <a id="min-button" href="#"><i class="fas fa-minus"></i></a>
+            <div class="window-controls">
+              <a class="close-button" id="close-button" href="#"
+                ><i class="fas fa-times"></i
+              ></a>
+              <a class="min-button" id="min-button" href="#"
+                ><i class="fas fa-minus"></i
+              ></a>
             </div>
           </div>
           <div class="recycle-window-style-content-wrapper">
@@ -298,21 +291,30 @@
                 </a>
                 <a href="#"
                   >&nbsp;<i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;<span
-                    >My Documents</span
+                    >My Doduments</span
                   >
                 </a>
               </div>
             </div>
             <div class="recycle-window-style-content-right-pane">
-              <div>
-                <!-- <button id="test-button">Click me</button> -->
-              </div>
+              <div></div>
             </div>
           </div>
+
+          <div class="spacer-50px"></div>
+          <div id="recycle-tab" class="tab-size hide">
+            <div class="window-title">
+              <p style="color: #fff; text-align: center">Recycle Bin</p>
+            </div>
+            <!-- <div class="window-controls">
+                            <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
+                            <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
+                        </div> -->
+          </div>
         </section>
+        <!-- Recycle Bin -->
       </div>
     </div>
-    <!-- Recycle Bin -->
     <script type="text/javascript" src="src/start.js"></script>
     <script type="text/javascript" src="src/settings.js"></script>
     <script src="src/desktop.js"></script>

@@ -1,6 +1,6 @@
 // start menu dropdown
 dropdown = () => {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("startDropdown").classList.toggle("show");
 };
 
 window.onclick = function(event) {
