@@ -36,6 +36,20 @@ body {
     text-decoration: none;
 }
 
+.menubar {
+    overflow: hidden;
+    background-color: #1b507c;
+}
+
+.menubar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    text-decoration: none;
+}
+
 .navbar a.right {
     float: right;
     padding: 12px 14px;
