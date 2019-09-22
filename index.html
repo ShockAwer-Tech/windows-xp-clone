@@ -18,13 +18,27 @@
 
 <body>
     <div ondrop="drop(event)" id="main-container" ondragover="allowDrop(event)">
-        <div class="navbar">
-            <a href="#" onclick="dropdown()" class="dropbtn"><i class="fab fa-windows"></i> Start</a
-        >
-        <a href="#" id="settings"><i class="fas fa-cog"></i> Settings</a>
-            <a href="#" class="right" id="date-section"></a>
-            <a href="#" class="right" id="time-section"></a>
-            <a href="#" class="right">ENG</a>
+        <div class="navbar" style="display: flex; justify-content: space-between; flex-direction: row">
+            <!-- Recycle bin tab -->
+            <div>
+                <a href="#" onclick="dropdown()" class="dropbtn"><i class="fab fa-windows"></i> Start</a>
+                <a href="#" id="settings"><i class="fas fa-cog"></i> Settings</a>
+                <div href="#" id="recycle-bin-tab" class="recycle-tab hide">
+                    <div class="window-title">
+                        <p style="color: #fff; text-align: center">Recycle Bin</p>
+                    </div>
+                    <div class="window-controls">
+                        <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
+                        <a class="close-button" id="close-tab-button" href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Recycle bin tab -->
+            <div>
+                <a href="#" class="right" id="date-section"></a>
+                <a href="#" class="right" id="time-section"></a>
+                <a href="#" class="right">ENG</a>
+            </div>
         </div>
         <div id="myDropdown" class="dropdown-content">
             <div class="windows-grid-container">
@@ -191,8 +205,9 @@
                             <p style="color: #fff; text-align: center">Recycle Bin</p>
                         </div>
                         <div class="window-controls">
-                            <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
-                            <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
+                            <a class="close-button" id="close-window-button" href="#"><i class="fas fa-times"></i></a>
+                            <a class="min-button" id="minimize-button" href="#"><i class="fas fa-minus"></i></a>
+                            <!-- <a href="#" id="minimize-button" class="">B</a> -->
                         </div>
                     </div>
                     <div class="recycle-window-style-content-wrapper">
@@ -209,7 +224,7 @@
                     </div>
 
                     <div class="spacer-50px"></div>
-                    <div id="recycle-tab" class="tab-size hide">
+                    <!-- <div id="recycle-tab" class="tab-size hide">
                         <div class="window-title">
                             <p style="color: #fff; text-align: center">Recycle Bin</p>
                         </div>
@@ -217,7 +232,7 @@
                             <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
                             <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
                         </div>
-                    </div>
+                    </div> -->
                 </section>
                 <!-- Recycle Bin -->
             </div>
