@@ -25,20 +25,25 @@ let tabTitle = document.getElementsByClassName("navbar").innerHTML;
 
 let newWindow = document.getElementById("windowDropdown");
 let calendar = document.getElementById("calendar");
-let calculator = document.getElementById("calculator");
+let calculator = document.getElementById("calc");
 let maximize = document.getElementById("maximize");
 let minimize = document.getElementById("minimize");
 let buttonClose = document.getElementById("closeButton");
 let closed = document.getElementById("closeBut");
 
+let resizeHandle = document.getElementById("windowDropdown");
+
 document.write(excelTab);
 
 function openWord() {
+  let name = wordTab.innerHTML;
   if (newWindow.style.display === "none") {
     newWindow.style.display = "block";
   } else {
     newWindow.style.display = "none";
   }
+  tabTitle = name;
+  console.log(name);
 }
 wordTab.addEventListener("click", openWord);
 

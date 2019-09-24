@@ -35,6 +35,8 @@ body {
 .menubar {
   overflow: hidden;
   background-color: #1b507c;
+  touch-action: none;
+  user-select: none;
 }
 .menubar a {
   float: left;
@@ -43,6 +45,8 @@ body {
   text-align: center;
   padding: 12px 10px;
   text-decoration: none;
+  touch-action: none;
+  user-select: none;
 }
 .navbar a.right {
   float: right;
@@ -189,7 +193,9 @@ p {
   margin: 50px;
   border-radius: 5px;
   background-color: #fff;
+  resize: se-resize;
   touch-action: none;
+  user-select: none;
 }
 @-webkit-keyframes animatetop {
   from {
@@ -212,12 +218,13 @@ p {
     opacity: 1;
   }
 }
-.wordBox {
+#wordBox {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
   margin: 10px;
   touch-action: none;
+  user-select: none;
 }
 
 .word-content {
@@ -232,6 +239,8 @@ p {
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
+  touch-action: none;
+  user-select: none;
 }
 .inputSection {
   margin: 5px;
@@ -247,14 +256,16 @@ textarea {
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  -webkit-user-drag: element;
 }
-iframe {
+#calc,
+#cal {
   display: none;
   overflow: hidden;
   margin: auto;
   padding: 0;
   position: absolute;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
