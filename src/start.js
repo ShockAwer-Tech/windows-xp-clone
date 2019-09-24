@@ -21,6 +21,7 @@ let wordTab = document.getElementById("Word");
 let excelTab = document.getElementById("Excel");
 let calculatorTab = document.getElementById("Calculator");
 let calendarTab = document.getElementById("Calendar");
+let tabTitle = document.getElementsByClassName("navbar").innerHTML;
 
 let newWindow = document.getElementById("windowDropdown");
 let calendar = document.getElementById("calendar");
@@ -29,6 +30,8 @@ let maximize = document.getElementById("maximize");
 let minimize = document.getElementById("minimize");
 let buttonClose = document.getElementById("closeButton");
 let closed = document.getElementById("closeBut");
+
+document.write(excelTab);
 
 function openWord() {
   if (newWindow.style.display === "none") {
@@ -72,25 +75,25 @@ maximize.addEventListener("click", function() {
     newWindow.style.minHeight !== "96%"
   ) {
     newWindow.style.minWidth = "99.2%";
-    newWindow.style.minHeight = "96%";
+    newWindow.style.minHeight = "100%";
+    newWindow.style.margin = "0";
   } else {
     newWindow.style.minWidth = "500px";
     newWindow.style.minHeight = "500px";
+    newWindow.style.margin = "30px";
   }
 });
 
 minimize.addEventListener("click", function() {
-  if (
-    newWindow.style.minWidth !== "500px" &&
-    newWindow.style.minHeight !== "500px"
-  ) {
-    newWindow.style.minWidth = "500px";
-    newWindow.style.minHeight = "500px";
+  if (newWindow.style.display !== "none") {
+    newWindow.style.display = "none";
+  } else {
+    newWindow.style.display = "block";
   }
 });
+
 buttonClose.addEventListener("click", function() {
   newWindow.style.display = "none";
-  calculator.style.display = "none";
 });
 
 function getPageTitle() {

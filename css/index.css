@@ -107,7 +107,7 @@ p {
   background-color: #f1f1f1;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 2;
 }
 
 .dropdown-content a {
@@ -175,6 +175,9 @@ p {
   display: block;
 }
 
+#source container {
+  position: fixed;
+}
 #windowDropdown {
   display: none;
   position: absolute;
@@ -183,9 +186,10 @@ p {
   top: 0;
   width: 40%;
   height: 80%;
-  margin: 5px;
+  margin: 50px;
   border-radius: 5px;
   background-color: #fff;
+  touch-action: none;
 }
 @-webkit-keyframes animatetop {
   from {
@@ -213,6 +217,7 @@ p {
   justify-content: space-between;
   align-content: space-between;
   margin: 10px;
+  touch-action: none;
 }
 
 .word-content {
@@ -247,6 +252,16 @@ textarea {
 iframe {
   display: none;
   overflow: hidden;
+  margin: auto;
+  padding: 0;
   position: absolute;
   z-index: 1;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  cursor: se-resize;
+}
+.inputSection {
+  position: relative;
 }

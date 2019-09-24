@@ -23,7 +23,7 @@
   </head>
 
   <body>
-    <div ondrop="drop(event)" id="main-container" ondragover="allowDrop(event)">
+    <div id="main-container">
       <div class="navbar">
         <a href="#" onclick="dropdown()" class="dropbtn"
           ><i class="fab fa-windows"></i> Start</a
@@ -53,53 +53,58 @@
 
       <!-- word view -->
 
-      <div id="windowDropdown" class="word-content callout" draggable="true">
-        <div class="wordBox">
-          <div>
-            <span class=""
-              ><i class="far fa-file-word" style="color:#339af0"></i
-            ></span>
+      <div
+        id="windowDropdown"
+        class="word-content callout"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+        ondragstart="drag(event)"
+        draggable="true"
+      >
+        <div id="windowContainer">
+          <div class="wordBox">
+            <div>
+              <span class=""
+                ><i class="far fa-file-word" style="color:#339af0"></i
+              ></span>
+            </div>
+            <div><span id="pageTitle"></span></div>
+            <div class="window-buttons">
+              <span class="dot min" id="minimize"></span>
+              <span class="dot max" id="maximize"></span>
+              <span class="dot close" id="closeButton"></span>
+            </div>
           </div>
-          <div><span id="pageTitle"></span></div>
-          <div class="window-buttons">
-            <span class="dot min" id="minimize"></span>
-            <span class="dot max" id="maximize"></span>
-            <span class="dot close" id="closeButton"></span>
+          <div class="menubar">
+            <div class="">
+              <a href="#"> File</a>
+              <a href="#"> Edit</a>
+              <a href="#"> Insert</a>
+            </div>
           </div>
-        </div>
-        <div class="menubar">
-          <div class="">
-            <a href="#"> File</a>
-            <a href="#"> Edit</a>
-            <a href="#"> Insert</a>
+          <div class="inputSection">
+            <textarea rows="22" name="description"> </textarea><br />
           </div>
-        </div>
-        <div class="inputSection">
-          <textarea rows="22" name="description"> </textarea><br />
         </div>
       </div>
       <!-- end word view -->
       <iframe
-        width="500"
-        height="400"
+        width="100%"
+        height="100%"
         src="calculator.html"
         name="calculator"
         id="calculator"
         frameborder="0"
       ></iframe>
       <iframe
-        width="500"
-        height="400"
+        width="40%"
+        height="90%"
         src="calendar.html"
         name="calendar"
         id="calendar"
         frameborder="0"
       >
-        <div class="window-buttons" style="float: right">
-          <span class="dot min" id="mini"></span>
-          <span class="dot max" id="maxi"></span>
-          <span class="dot close" id="closeBut"><i></i></span></div
-      ></iframe>
+      </iframe>
       <!-- section for settings -->
       <div id="setDropdown" class="setdropdown-content callout">
         <div class="box">
@@ -306,10 +311,6 @@
             <div class="window-title">
               <p style="color: #fff; text-align: center">Recycle Bin</p>
             </div>
-            <!-- <div class="window-controls">
-                            <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
-                            <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
-                        </div> -->
           </div>
         </section>
         <!-- Recycle Bin -->
@@ -317,8 +318,7 @@
     </div>
     <script type="text/javascript" src="src/start.js"></script>
     <script type="text/javascript" src="src/settings.js"></script>
-    <script src="src/desktop.js"></script>
-    <script src="src/calendar.js"></script>
+    <script type="text/javascript" src="src/desktop.js"></script>
     <script type="text/javascript" src="src/date-time.js"></script>
     <script type="text/javascript" src="src/recycle-bin.js"></script>
   </body>

@@ -45,6 +45,9 @@ function closeForm() {
 }
 
 close.addEventListener("click", closeForm);
+
+//get all the id's
+// drag and drop
 let container = document.getElementById("innerContainer");
 let outerContainer = document.getElementById("outerContainer");
 
