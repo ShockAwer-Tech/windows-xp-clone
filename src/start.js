@@ -21,7 +21,8 @@ let wordTab = document.getElementById("Word");
 let excelTab = document.getElementById("Excel");
 let calculatorTab = document.getElementById("Calculator");
 let calendarTab = document.getElementById("Calendar");
-let tabTitle = document.getElementsByClassName("navbar").innerHTML;
+// let tabTitle = document.getElementById("windowName");
+let tabWindows = document.getElementsByClassName("window");
 
 let newWindow = document.getElementById("windowDropdown");
 let calendar = document.getElementById("calendar");
@@ -33,17 +34,12 @@ let closed = document.getElementById("closeBut");
 
 let resizeHandle = document.getElementById("windowDropdown");
 
-document.write(excelTab);
-
 function openWord() {
-  let name = wordTab.innerHTML;
   if (newWindow.style.display === "none") {
     newWindow.style.display = "block";
   } else {
     newWindow.style.display = "none";
   }
-  tabTitle = name;
-  console.log(name);
 }
 wordTab.addEventListener("click", openWord);
 
@@ -95,15 +91,11 @@ minimize.addEventListener("click", function() {
   } else {
     newWindow.style.display = "block";
   }
+  tabTitle = excelTab.innerHTML;
+  document.getElementById("windowName").innerHTML = tabTitle;
+  console.log(tabTitle);
 });
 
 buttonClose.addEventListener("click", function() {
   newWindow.style.display = "none";
 });
-
-function getPageTitle() {
-  let title = document.getAttribute("id");
-  document.getElementById("pageTitle").innerHTML = title;
-
-  console.log(title);
-}
