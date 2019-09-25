@@ -1,25 +1,26 @@
-let container = document.getElementById("innerContainer");
-let outerContainer = document.getElementById("outerContainer");
-
-var activeItem = null;
+let windowContainer = document.querySelector("#windowContainer");
 
 var active = false;
+var currentX;
+var currentY;
+var initialX;
+var initialY;
 
-container.addEventListener("touchstart", dragStart, false);
-container.addEventListener("touchend", dragEnd, false);
-container.addEventListener("touchmove", drag, false);
+windowContainer.addEventListener("touchstart", dragStart, false);
+windowContainer.addEventListener("touchend", dragEnd, false);
+windowContainer.addEventListener("touchmove", drag, false);
 
-container.addEventListener("mousedown", dragStart, false);
-container.addEventListener("mouseup", dragEnd, false);
-container.addEventListener("mousemove", drag, false);
+windowContainer.addEventListener("mousedown", dragStart, false);
+windowContainer.addEventListener("mouseup", dragEnd, false);
+windowContainer.addEventListener("mousemove", drag, false);
 
-container.addEventListener("dragover", onDragOver, false);
+windowContainer.addEventListener("dragover", onDragOver, false);
 
 function dragStart(e) {
   if (e.target !== e.currentTarget) {
     active = true;
 
-    // this is the item we are interacting with
+    //   // this is the item we are interacting with
     activeItem = e.target;
 
     if (activeItem !== null) {
@@ -42,7 +43,6 @@ function dragStart(e) {
     }
   }
 }
-
 function dragEnd(e) {
   if (activeItem !== null) {
     activeItem.initialX = activeItem.currentX;

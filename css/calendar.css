@@ -7,7 +7,13 @@ ul {
 body {
   font-family: Verdana, sans-serif;
 }
-
+.calendar-container {
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  position: absolute;
+}
 .month {
   padding: 50px 25px;
   width: 100%;
@@ -70,4 +76,25 @@ body {
   padding: 5px;
   background: #1abc9c;
   color: white !important;
+}
+@-webkit-keyframes animatetop {
+  from {
+    top: -500px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
