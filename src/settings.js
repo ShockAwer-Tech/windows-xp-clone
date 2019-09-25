@@ -21,19 +21,14 @@ max.addEventListener("click", function() {
   if (x.style.minWidth !== "99.2%" && x.style.minHeight !== "96%") {
     x.style.minWidth = "99.2%";
     x.style.minHeight = "96%";
-  } else {
+  } else if (x.style.minWidth !== "500px" && x.style.minHeight !== "500px") {
     x.style.minWidth = "500px";
     x.style.minHeight = "500px";
   }
 });
 
 // minimize the widow
-min.addEventListener("click", function() {
-  if (x.style.minWidth !== "500px" && x.style.minHeight !== "500px") {
-    x.style.minWidth = "500px";
-    x.style.minHeight = "500px";
-  }
-});
+min.addEventListener("click", function() {});
 
 // hides the window that displays when setting is clicked
 function closeForm() {
@@ -45,6 +40,9 @@ function closeForm() {
 }
 
 close.addEventListener("click", closeForm);
+
+//get all the id's
+// drag and drop
 let container = document.getElementById("innerContainer");
 let outerContainer = document.getElementById("outerContainer");
 
