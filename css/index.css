@@ -5,6 +5,7 @@ body {
   background-size: cover;
   margin: 0;
   padding: 0;
+  /* border: 2px solid green; */
 }
 
 .desktop {
@@ -361,7 +362,19 @@ textarea {
   cursor: pointer;
   background: rgb(219, 219, 219);
 }
-
+.window-title {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 200px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  padding-left: 20px;
+  position: relative;
+  z-index: 1;
+}
 [draggable="true"] {
   -moz-user-select: none;
   -khtml-user-select: none;

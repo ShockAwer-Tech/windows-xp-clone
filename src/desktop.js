@@ -1,10 +1,10 @@
-let windowContainer = document.querySelector("#windowContainer");
+let windowContainer = document.querySelector(".container");
 
-var active = false;
-var currentX;
-var currentY;
-var initialX;
-var initialY;
+// var active = true;
+// var currentX;
+// var currentY;
+// var initialX;
+// var initialY;
 
 windowContainer.addEventListener("touchstart", dragStart, false);
 windowContainer.addEventListener("touchend", dragEnd, false);
@@ -17,7 +17,7 @@ windowContainer.addEventListener("mousemove", drag, false);
 windowContainer.addEventListener("dragover", onDragOver, false);
 
 function dragStart(e) {
-  if (e.target !== e.currentTarget) {
+  if (e.target !== e.windowContainer) {
     active = true;
 
     //   // this is the item we are interacting with
@@ -33,10 +33,9 @@ function dragStart(e) {
       }
 
       if (e.type === "touchstart") {
-        activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
-        activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
+        activeItem.initialX = e.touches.clientX - activeItem.xOffset;
+        activeItem.initialY = e.touches.clientY - activeItem.yOffset;
       } else {
-        console.log("doing something!");
         activeItem.initialX = e.clientX - activeItem.xOffset;
         activeItem.initialY = e.clientY - activeItem.yOffset;
       }
@@ -48,9 +47,6 @@ function dragEnd(e) {
     activeItem.initialX = activeItem.currentX;
     activeItem.initialY = activeItem.currentY;
   }
-
-  active = false;
-  activeItem = null;
 }
 
 function onDragOver(event) {
@@ -67,7 +63,6 @@ function drag(e) {
       activeItem.currentX = e.clientX - activeItem.initialX;
       activeItem.currentY = e.clientY - activeItem.initialY;
     }
-
     activeItem.xOffset = activeItem.currentX;
     activeItem.yOffset = activeItem.currentY;
 
