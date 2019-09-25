@@ -76,10 +76,10 @@ calculatorTab.addEventListener("click", openCalculator);
 
 maximize.addEventListener("click", function() {
   if (
-    newWindow.style.minWidth !== "99.2%" &&
+    newWindow.style.minWidth !== "100%" &&
     newWindow.style.minHeight !== "96%"
   ) {
-    newWindow.style.minWidth = "99.2%";
+    newWindow.style.minWidth = "100%";
     newWindow.style.minHeight = "100%";
     newWindow.style.margin = "0";
   } else {
