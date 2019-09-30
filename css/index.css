@@ -402,3 +402,14 @@ textarea {
   min-width: 300px;
   min-height: 300px;
 }
+.window-tab{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  font-family: "Roboto", sans-serif;
+  padding-left: 20px;
+  position: relative;
+  color: #fff;
+  background-color: #000
+}
