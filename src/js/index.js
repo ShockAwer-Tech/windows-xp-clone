@@ -11,10 +11,14 @@ dragElement(document.getElementById("example-window"));
 document.getElementById("recycle-bin-button").addEventListener("dblclick", partial(openExampleWindow, 'Recycle Bin'));
 document.getElementById("chrome-button").addEventListener("dblclick", partial(openExampleWindow, 'Chrome'));
 document.getElementById("documents-button").addEventListener("dblclick", partial(openExampleWindow, 'My Documents'));
+document.getElementById("Word").addEventListener("click", partial(openExampleWindow, 'Ms Word'));
+document.getElementById("Excel").addEventListener("click", partial(openExampleWindow, 'Ms Excel'));
+
 
 document.getElementById("example-window-close-button").addEventListener("click", closeExampleWindow);
 document.getElementById("example-window-maximize-button").addEventListener("click", maximizeExampleWindow);
 document.getElementById("example-window-minimize-button").addEventListener("click", minimizeExampleWindow);
+document.getElementById("window-tab").addEventListener("click", minimizeExampleWindow,openExampleWindow);
 
 var exampleWindow = document.getElementById("example-window");
 
@@ -25,10 +29,15 @@ var exampleWindow = document.getElementById("example-window");
 function openExampleWindow(windowName) {
     exampleWindow.style.display = "block";
     document.getElementById("example-window-title").innerText = windowName;
+    document.getElementById("window-tab").innerText=windowName
+    document.getElementById("window-tab").classList.add("window-tab")
 }
 
 function closeExampleWindow() {
     exampleWindow.style.display = "none";
+    document.getElementById("window-tab").style.display="none"
+    document.getElementById("window-tab").classList.remove("window-tab")
+
 }
 
 function maximizeExampleWindow() {
@@ -55,6 +64,7 @@ function minimizeExampleWindow() {
     } else {
         exampleWindow.style.display = "block";
     }
+  
 }  
 
 

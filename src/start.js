@@ -16,17 +16,16 @@ window.onclick = function(event) {
   }
 };
 
-// //dropdown for all tabs
 // let wordTab = document.getElementById("Word");
 // let excelTab = document.getElementById("Excel");
-// let calculatorTab = document.getElementById("Calculator");
-// let calendarTab = document.getElementById("Calendar");
+let calculatorTab = document.getElementById("Calculator");
+ let calendarTab = document.getElementById("Calendar");
 // // let tabTitle = document.getElementById("windowName");
 // let tabWindows = document.getElementsByClassName("window");
 
 // let newWindow = document.getElementById("windowDropdown");
-// let calendar = document.getElementById("calendar");
-// let calculator = document.getElementById("calc");
+let calendar = document.getElementById("calendar");
+let calculator = document.getElementById("calc");
 // let maximize = document.getElementById("maximize");
 // let minimize = document.getElementById("minimize");
 // let buttonClose = document.getElementById("closeButton");
@@ -51,24 +50,21 @@ window.onclick = function(event) {
 //   }
 // }
 // excelTab.addEventListener("click", openExcel);
+ function openCalendar() {
+  if (calendar.style.display === "none") {
+    calendar.style.display = "block";
+  } else {
+  calendar.style.display = "none";
+  }
+}
+calendarTab.addEventListener("click", openCalendar);
 
-// function openCalendar() {
-//   if (calendar.style.display === "none") {
-//     calendar.style.display = "block";
-//   } else {
-//     calendar.style.display = "none";
-//   }
-// }
-// calendarTab.addEventListener("click", openCalendar);
-
-// function openCalculator() {
-//   if (calculator.style.display === "none") {
-//     calculator.style.display = "block";
-//   } else {
-//     calculator.style.display = "none";
-//   }
-// }
-// calculatorTab.addEventListener("click", openCalculator);
+function openCalculator() {   if (calculator.style.display === "none") {
+    calculator.style.display = "block";
+  } else {     calculator.style.display = "none";
+  }
+}
+calculatorTab.addEventListener("click", openCalculator);
 
 // maximize.addEventListener("click", function() {
 //   if (
