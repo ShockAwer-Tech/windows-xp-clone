@@ -44,7 +44,7 @@
             <p style="color: #fff; text-align: center">Recycle Bin</p>
           </div>
           <div class="window-controls">
-            <a class="min-button" id="min-button" href="#"
+            <a class="min-button" id="tab-minize-button" href="#"
               ><i class="fas fa-minus"></i
             ></a>
             <a class="close-button" id="close-tab-button" href="#"
@@ -101,7 +101,28 @@
           </div>
         </div>
       </div>
-      <!-- end word view -->
+
+      <!-- example window -->
+      <div id="window" >
+          <div id="example-window" class="window-content">
+            <div id="example-window-header" class="window-header">
+              <div>
+                <span class=""
+                  ><i class="far fa-file-word" style="color:#339af0"></i
+                ></span>
+              </div>
+              <div><span id="example-window-title"></span></div>
+              <div class="window-buttons">
+                <span class="dot min" id="example-window-minimize-button"></span>
+                <span class="dot max" id="example-window-maximize-button"></span>
+                <span class="dot close" id="example-window-close-button"></span>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      <!-- end example window -->
+
       <div id="calc">
         <iframe
           width="100%"
@@ -250,7 +271,7 @@
       </div>
 
       <div class="desktop-grid-container" style="position: relative;">
-        <div class="icon-container" id="bin-icon" style="cursor: move;position: absolute;top: 50px;left: 0;">
+        <div class="icon-container" id="recycle-bin-icon" style="position: absolute;top: 50px;left: 0;">
           <button id="recycle-bin-button">
               <svg viewBox="0 0 504.123 504.123" height="40">
                 <path style="fill:#EFC75E;" d="M406.617,430.08c0,40.96-68.923,74.043-154.388,74.043c-85.071,0-154.388-33.083-154.388-74.043
@@ -292,8 +313,8 @@
               <p>Recycle Bin</p>
             </button>
         </div>
-        <div class="icon-container" id="chrome-icon" style="cursor: move;position: absolute;top:150px;left:0;">
-          <button>
+        <div class="icon-container" id="chrome-icon" style="position: absolute;top:180px;left:0;">
+          <button id="chrome-button">
               <svg viewBox="0 0 512.001 512.001" height="40">
                 <path style="fill:#E16B5A;" d="M255.333,0.048c0,0,150.936-6.78,230.932,144.636c-42.26,0-243.764,0-243.764,0
                   s-46.036-1.512-85.28,54.244c-11.32,23.352-23.392,47.46-9.808,94.916C127.793,260.704,43.265,113.8,43.265,113.8
@@ -319,10 +340,9 @@
             </button>
         </div>
         
-        <div class="icon-container" id="documents-icon" style="cursor: move;position: absolute;top:250px;left:0;">
-          <button>
+        <div class="icon-container" id="documents-icon" style="position: absolute;top:300px;left:0;">
+          <button id="documents-button">
               <svg viewBox="0 0 57 57" height="40">
-                <g id="XMLID_98_">
                   <polygon id="XMLID_97_" style="fill:#F3D55C;" points="23,13 20,5 0,5 0,13 0,52 48,52 48,13 	"/>
                   <path id="XMLID_111_" style="fill:#F0C41B;" d="M48,17h9l-8.938,34.761C48.052,51.796,48,51.79,48,51.753V17z"/>
                   <rect id="XMLID_110_" x="6" y="33" style="fill:#F5F1E2;" width="22" height="13"/>
@@ -338,89 +358,17 @@
                   <path id="XMLID_105_" style="fill:#D6D0BB;" d="M18,38c-0.26,0-0.521-0.11-0.71-0.29C17.109,37.52,17,37.26,17,37
                     s0.109-0.521,0.29-0.71c0.358-0.37,1.05-0.37,1.42,0C18.89,36.479,19,36.729,19,37c0,0.26-0.11,0.52-0.29,0.71
                     C18.52,37.89,18.26,38,18,38"/>
-                </g>
               </svg>
               <p>My Documents</p>
             </button>
         </div> 
       </div>
-
-      <div
-        id="outerContainer"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-        class="desktop"
-      >
-        <div
-          id="innerContainer"
-          ondrop="drop(event)"
-          ondragover="allowDrop(event)"
-          class="desktop"
-        >
-          <div
-            class="desktop"
-            ondrop="drop(event)"
-            ondragover="allowDrop(event)"
-            id="trash container"
-          >
-            
-          </div>
-          <!-- Recycle Bin window -->
-          <section id="recycle-bin-window" class="recycle-window-style hide">
-            <div class="recycle-window-style-content-wrapper-header">
-              <p>&nbsp;</p>
-              <div class="window-title">
-                <p style="color: #fff; text-align: center">Recycle Bin</p>
-              </div>
-              <div class="window-controls">
-                <a class="close-button" id="close-window-button" href="#"
-                  ><i class="fas fa-times"></i
-                ></a>
-                <a class="min-button" id="minimize-button" href="#"
-                  ><i class="fas fa-minus"></i
-                ></a>
-              </div>
-            </div>
-            <div class="recycle-window-style-content-wrapper">
-              <div class="recycle-window-style-content-left-pane">
-                <div class="nav">
-                  <a href="#"
-                    ><i class="fas fa-desktop"></i>&nbsp;&nbsp;<span
-                      >Desktop</span
-                    >
-                  </a>
-                  <a href="#"
-                    >&nbsp;<i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;<span
-                      >My Doduments</span
-                    >
-                  </a>
-                </div>
-              </div>
-              <div class="recycle-window-style-content-right-pane">
-                <div></div>
-              </div>
-            </div>
-
-            <div class="spacer-50px"></div>
-            <!-- <div id="recycle-tab" class="tab-size hide">
-                        <div class="window-title">
-                            <p style="color: #fff; text-align: center">Recycle Bin</p>
-                        </div>
-                        <div class="window-controls">
-                            <a class="close-button" id="close-button" href="#"><i class="fas fa-times"></i></a>
-                            <a class="min-button" id="min-button" href="#"><i class="fas fa-minus"></i></a>
-                        </div>
-                    </div> -->
-          </section>
-          <!-- Recycle Bin -->
-        </div>
-      </div>
+      
     </div>
     <script type="text/javascript" src="src/js/index.js"></script>
+    <script type="text/javascript" src="src/date-time.js"></script>
     <script type="text/javascript" src="src/start.js"></script>
     <script type="text/javascript" src="src/settings.js"></script> 
-    <script type="text/javascript" src="src/desktop.js"></script>
-    <script type="text/javascript" src="src/date-time.js"></script>
-    <script type="text/javascript" src="src/recycle-bin.js"></script>   
+    
   </body>
 </html>

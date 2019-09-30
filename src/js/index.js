@@ -1,14 +1,73 @@
 //Make the DIV element draggagle:
-dragElement(document.getElementById("bin-icon"));
+dragElement(document.getElementById("recycle-bin-icon"));
 dragElement(document.getElementById("chrome-icon"));
 dragElement(document.getElementById("documents-icon"));
+dragElement(document.getElementById("example-window"));
 
+// let maximize = document.getElementById("maximize");
+// let minimize = document.getElementById("minimize");
+
+// Open Window
+document.getElementById("recycle-bin-button").addEventListener("dblclick", partial(openExampleWindow, 'Recycle Bin'));
+document.getElementById("chrome-button").addEventListener("dblclick", partial(openExampleWindow, 'Chrome'));
+document.getElementById("documents-button").addEventListener("dblclick", partial(openExampleWindow, 'My Documents'));
+
+document.getElementById("example-window-close-button").addEventListener("click", closeExampleWindow);
+document.getElementById("example-window-maximize-button").addEventListener("click", maximizeExampleWindow);
+document.getElementById("example-window-minimize-button").addEventListener("click", minimizeExampleWindow);
+
+var exampleWindow = document.getElementById("example-window");
+
+
+/***
+ * Example Window Functions
+ */
+function openExampleWindow(windowName) {
+    exampleWindow.style.display = "block";
+    document.getElementById("example-window-title").innerText = windowName;
+}
+
+function closeExampleWindow() {
+    exampleWindow.style.display = "none";
+}
+
+function maximizeExampleWindow() {
+    if (
+        exampleWindow.style.minWidth !== "100%" &&
+        exampleWindow.style.minHeight !== "96%"
+    ) {
+        exampleWindow.style.left = "0";
+        exampleWindow.style.right = "0";
+        exampleWindow.style.minWidth = "100%";
+        exampleWindow.style.minHeight = "100%";
+        exampleWindow.style.margin = "0";
+    } else {
+        exampleWindow.style.minWidth = "40%";
+        exampleWindow.style.minHeight = "40%";
+        exampleWindow.style.margin = "50px";
+        exampleWindow.style.left = "300px";
+    }
+}  
+
+function minimizeExampleWindow() {
+    if (exampleWindow.style.display !== "none") {
+        exampleWindow.style.display = "none";
+    } else {
+        exampleWindow.style.display = "block";
+    }
+}  
+
+
+
+/***
+ * Drag and drop Function
+ */
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
-  if (document.getElementById(elmnt.id + "header")) {
+  if (document.getElementById(elmnt.id + "-header")) {
     /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
   } else {
     /* otherwise, move the DIV from anywhere inside the DIV:*/
     elmnt.onmousedown = dragMouseDown;
@@ -20,7 +79,6 @@ function dragElement(elmnt) {
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
-    console.log("Current Pointer Position: ", pos3, pos4);
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
@@ -33,16 +91,12 @@ function dragElement(elmnt) {
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
-    console.log("Final Pointer Position: ", pos3, pos4);
 
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-
-    console.log("Style: ", elmnt.style.top, elmnt.style.left);
-
   }
 
   function closeDragElement() {
@@ -50,4 +104,16 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
+}
+
+
+/***
+ * Crtical don't delete!
+ */
+function partial(func /*, 0..n args */) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return function() {
+      var allArguments = args.concat(Array.prototype.slice.call(arguments));
+      return func.apply(this, allArguments);
+    };
 }
