@@ -71,10 +71,6 @@
   display: none;
 }
 
-[draggable="true"] {
-  outline: 1px solid grey;
-}
-
 [data-role="drag-drop-target"] {
   outline: 1px solid green;
   height: 100vh;

@@ -1,14 +1,10 @@
-setInterval(getTime, 1000);
-setInterval(getDate, 1000);
-var d = new Date();
+window.onload = function() {
+  var d = new Date();
+  getTime();
+  getDate();
+  setInterval(getTime, 1000);
+  //setInterval(getDate, 10000);
 
-function getTime() {
-  d = new Date();
-  var minutes = d.getMinutes();
-  var hours = d.getHours();
-  document.getElementById("time-section").innerHTML = parseTime(hours, minutes);
-
-  // Time
   function parseTime(hours, minutes) {
     if (minutes < 10) {
       minutes = "0" + minutes;
@@ -18,20 +14,7 @@ function getTime() {
     }
     return hours + ":" + minutes;
   }
-}
 
-function getDate() {
-  d = new Date();
-  var date = d.getDate();
-  var month = 1 + d.getMonth();
-  var year = d.getFullYear();
-
-  document.getElementById("date-section").innerHTML = parseDate(
-    date,
-    month,
-    year
-  );
-  // Date
   function parseDate(date, month, year) {
     if (date < 10) {
       date = "0" + date;
@@ -41,4 +24,26 @@ function getDate() {
     }
     return date + "/" + month + "/" + year;
   }
-}
+
+
+  function getTime() {
+    var minutes = d.getMinutes();
+    var hours = d.getHours();
+    
+    document.getElementById("nav-time-section").innerText = parseTime(hours, minutes);
+  }
+
+  function getDate() {
+    var date = d.getDate();
+    var month = 1 + d.getMonth();
+    var year = d.getFullYear();
+
+    document.getElementById("nav-date-section").innerText = parseDate(
+      date,
+      month,
+      year
+    );  
+  }
+};
+
+
