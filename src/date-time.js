@@ -6,7 +6,6 @@ function getTime() {
   d = new Date();
   var minutes = d.getMinutes();
   var hours = d.getHours();
-
   document.getElementById("time-section").innerHTML = parseTime(hours, minutes);
 
   // Time
