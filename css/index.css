@@ -82,7 +82,7 @@ body {
 }
 
 .desktop button {
-  background-color: #330000;
+  background-color: transparent;
   border: none;
   color: white;
   padding: 13px 25px;
@@ -90,6 +90,7 @@ body {
   text-decoration: none;
   display: inline-block;
   border-radius: 3px;
+  font-weight: bold;
   font-size: 16px;
 }
 
