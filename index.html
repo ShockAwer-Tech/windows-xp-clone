@@ -101,7 +101,37 @@
           </div>
         </div>
       </div>
-      <!-- end word view -->
+
+      <!-- example window -->
+      <div id="windowContainer" class="container" draggable="true">
+          <div id="windowDropdown" class="word-content callout">
+            <div id="wordBox">
+              <div>
+                <span class=""
+                  ><i class="far fa-file-word" style="color:#339af0"></i
+                ></span>
+              </div>
+              <div><span id="pageTitle"></span></div>
+              <div class="window-buttons">
+                <span class="dot min" id="minimize"></span>
+                <span class="dot max" id="maximize"></span>
+                <span class="dot close" id="closeButton"></span>
+              </div>
+            </div>
+            <div class="menubar">
+              <div class="">
+                <a href="#"> File</a>
+                <a href="#"> Edit</a>
+                <a href="#"> Insert</a>
+              </div>
+            </div>
+            <div class="inputSection">
+              <textarea rows="22" name="description"> </textarea><br />
+            </div>
+          </div>
+        </div>
+      <!-- end example window -->
+
       <div id="calc">
         <iframe
           width="100%"
@@ -250,7 +280,7 @@
       </div>
 
       <div class="desktop-grid-container" style="position: relative;">
-        <div class="icon-container" id="bin-icon" style="cursor: move;position: absolute;top: 50px;left: 0;">
+        <div class="icon-container" id="recycle-bin-icon" style="cursor: move;position: absolute;top: 50px;left: 0;">
           <button id="recycle-bin-button">
               <svg viewBox="0 0 504.123 504.123" height="40">
                 <path style="fill:#EFC75E;" d="M406.617,430.08c0,40.96-68.923,74.043-154.388,74.043c-85.071,0-154.388-33.083-154.388-74.043
@@ -420,7 +450,6 @@
     <script type="text/javascript" src="src/js/index.js"></script>
     <script type="text/javascript" src="src/start.js"></script>
     <script type="text/javascript" src="src/settings.js"></script> 
-    <script type="text/javascript" src="src/desktop.js"></script>
     <script type="text/javascript" src="src/date-time.js"></script>
     <script type="text/javascript" src="src/recycle-bin.js"></script>   
   </body>

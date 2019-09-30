@@ -1,5 +1,5 @@
 //Make the DIV element draggagle:
-dragElement(document.getElementById("bin-icon"));
+dragElement(document.getElementById("recycle-bin-icon"));
 dragElement(document.getElementById("chrome-icon"));
 dragElement(document.getElementById("documents-icon"));
 
