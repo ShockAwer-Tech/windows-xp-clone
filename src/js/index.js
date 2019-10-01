@@ -1,13 +1,29 @@
-//Make the DIV element draggagle:
+// ==========================================================================
+//
+// Variable Declaration
+//
+// ==========================================================================
+var exampleWindow = document.getElementById("example-window");
+var taskbar = document.getElementById("taskbar");
+var exampleWindowIcon = document.getElementById("example-window-icon");
+
+
+// ==========================================================================
+//
+// Window Drag and Drop Event Listeners
+//
+// ==========================================================================
 dragElement(document.getElementById("recycle-bin-icon"));
 dragElement(document.getElementById("chrome-icon"));
 dragElement(document.getElementById("documents-icon"));
 dragElement(document.getElementById("example-window"));
 
-// let maximize = document.getElementById("maximize");
-// let minimize = document.getElementById("minimize");
 
-// Open Window
+// ==========================================================================
+//
+// Open Example Window Event Listeners
+//
+// ==========================================================================
 document.getElementById("recycle-bin-button").addEventListener("dblclick", partial(openExampleWindow, 'Recycle Bin'));
 document.getElementById("chrome-button").addEventListener("dblclick", partial(openExampleWindow, 'Chrome'));
 document.getElementById("documents-button").addEventListener("dblclick", partial(openExampleWindow, 'My Documents'));
@@ -15,29 +31,64 @@ document.getElementById("Word").addEventListener("click", partial(openExampleWin
 document.getElementById("Excel").addEventListener("click", partial(openExampleWindow, 'Ms Excel'));
 
 
+// ==========================================================================
+//
+// Close, Minimize and Maximize Example Window Event Listeners
+//
+// ==========================================================================
 document.getElementById("example-window-close-button").addEventListener("click", closeExampleWindow);
 document.getElementById("example-window-maximize-button").addEventListener("click", maximizeExampleWindow);
 document.getElementById("example-window-minimize-button").addEventListener("click", minimizeExampleWindow);
-document.getElementById("window-tab").addEventListener("click", minimizeExampleWindow,openExampleWindow);
-
-var exampleWindow = document.getElementById("example-window");
+taskbar.addEventListener("click", minimizeExampleWindow,openExampleWindow);
 
 
-/***
- * Example Window Functions
- */
+// ==========================================================================
+//
+// Example Window Functions
+//
+// ==========================================================================
 function openExampleWindow(windowName) {
-    exampleWindow.style.display = "block";
-    document.getElementById("example-window-title").innerText = windowName;
-    document.getElementById("window-tab").innerText=windowName
-    document.getElementById("window-tab").classList.add("window-tab")
+  // Display Window
+  exampleWindow.style.display = "block";
+  document.getElementById("example-window-title").innerText = windowName;
+
+  // Show active window in taskbar
+  taskbar.classList.add("window-tab");
+  taskbar.innerText = windowName;
+
+  // Display Window Icon
+  switch (windowName) {
+    case 'Ms Word':
+        exampleWindowIcon.innerHTML = '<i class="far fa-file-word" style="color:#339af0">';
+      break;
+    case 'Ms Excel':
+        exampleWindowIcon.innerHTML = '<i class="far fa-file-excel" style="color:#48BB78"></i>';
+      break;
+    case 'Ms Excel':
+        exampleWindowIcon.innerHTML = '<i class="far fa-file-excel" style="color:#48BB78"></i>';
+      break;
+    case 'Chrome':
+        exampleWindowIcon.innerHTML = '<i class="fab fa-chrome" style="color:#48BB78"></i>';
+        break;
+    case 'My Documents':
+        exampleWindowIcon.innerHTML = '<i class="far fa-folder-open" style="color:#F6E05E"></i>';
+        break;
+    case 'Recycle Bin':
+        exampleWindowIcon.innerHTML = '<i class="far fa-trash-alt" style="color:#F6E05E"></i>';
+        break;
+    default:
+        exampleWindowIcon.innerHTML = '<i class="far fa-file-word" style="color:#339af0">';
+      break;
+  }
 }
 
 function closeExampleWindow() {
-    exampleWindow.style.display = "none";
-    document.getElementById("window-tab").style.display="none"
-    document.getElementById("window-tab").classList.remove("window-tab")
+  // Hide Window 
+  exampleWindow.style.display = "none";
 
+  // Hide window from Taskbar
+  taskbar.classList.remove("window-tab");
+  taskbar.innerText = "";
 }
 
 function maximizeExampleWindow() {
@@ -68,10 +119,11 @@ function minimizeExampleWindow() {
 }  
 
 
-
-/***
- * Drag and drop Function
- */
+// ==========================================================================
+//
+// Drag and drop Functions
+//
+// ==========================================================================
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
@@ -117,6 +169,8 @@ function dragElement(elmnt) {
 }
 
 
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 /***
  * Crtical don't delete!
  */
