@@ -7,7 +7,14 @@ var tab, minButton;
 minButton = document.getElementById("min-button");
 
 // recycleBinButton.onclick = openWindow;
-recycleBinButton.ondblclick = cloneWindow;
+recycleBinButton.addEventListener("dblclick", function() {
+  var duplicateWindow = recycleBinWindow.cloneNode(true);
+  recycleBinWindow.classList.toggle("hide");
+  //   if (recycleBinWindow.classList.contains("hide")) {
+  //     document.body.appendChild(duplicateWindow);
+  //     recycleBinWindow.classList.add("div-position");
+  //   }
+});
 minButton.onclick = minWindow;
 closeWindowButton.onclick = closeWindow;
 closeTabButton.onclick = closeTab;
@@ -59,11 +66,11 @@ function restoreWindow() {
 }
 
 // Clone window
-function cloneWindow() {
-  var duplicateWindow = recycleBinWindow.cloneNode(true);
-  recycleBinWindow.classList.toggle("hide");
-  if (recycleBinWindow.classList.contains("hide")) {
-    document.body.appendChild(duplicateWindow);
-    recycleBinWindow.classList.add("div-position");
-  }
-}
+// function cloneWindow() {
+//   var duplicateWindow = recycleBinWindow.cloneNode(true);
+//   recycleBinWindow.classList.toggle("hide");
+//   if (recycleBinWindow.classList.contains("hide")) {
+//     document.body.appendChild(duplicateWindow);
+//     recycleBinWindow.classList.add("div-position");
+//   }
+// }
