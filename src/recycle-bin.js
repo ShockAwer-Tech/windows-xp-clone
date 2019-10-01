@@ -1,71 +1,52 @@
-var recycleBinButton = document.getElementById("recycle-bin-button");
-var recycleBinWindow = document.getElementById("recycle-bin-window");
-var closeWindowButton = document.getElementById("close-window-button");
-var closeTabButton = document.getElementById("close-tab-button");
-var recycleBinTab = document.getElementById("recycle-bin-tab");
-var tab, minButton;
-minButton = document.getElementById("min-button");
+// var recycleBinButton = document.getElementById("recycle-bin-button");
+// var recycleBinWindow = document.getElementById("recycle-bin-window");
+// var closeWindowButton = document.getElementById("close-window-button");
+// var closeTabButton = document.getElementById("close-tab-button");
+// var recycleBinTab = document.getElementById("recycle-bin-tab");
+// var minimizeButton = document.getElementById("minimize-button");
+// minButton = document.getElementById("tab-minize-button");
 
-// recycleBinButton.onclick = openWindow;
-recycleBinButton.addEventListener("dblclick", function() {
-  var duplicateWindow = recycleBinWindow.cloneNode(true);
-  recycleBinWindow.classList.toggle("hide");
-  //   if (recycleBinWindow.classList.contains("hide")) {
-  //     document.body.appendChild(duplicateWindow);
-  //     recycleBinWindow.classList.add("div-position");
-  //   }
-});
-minButton.onclick = minWindow;
-closeWindowButton.onclick = closeWindow;
-closeTabButton.onclick = closeTab;
+// var tab, minButton;
 
-// This function opens the recycle bin window
-function openWindow() {
-  if (recycleBinWindow.classList.contains("hide")) {
-    recycleBinWindow.classList.remove("hide");
-  } else {
-    recycleBinWindow.classList.add("hide");
-  }
-}
+// document.getElementById("recycle-bin-button").addEventListener("dblclick", openWindow);
+// minimizeButton.onclick = minWindow;
+// closeWindowButton.onclick = closeWindow;
+// closeTabButton.onclick = closeTab;
 
-// This function closes the recycle bin window
-function closeWindow() {
-  recycleBinWindow.style.display = "none";
-  recycleBinTab.style.display = "none";
-}
-// This function closes the recycle bin tab and window
-function closeTab() {
-  recycleBinTab.style.display = "none";
-  recycleBinWindow.style.display = "none";
-}
+// // This function opens the recycle bin window
+// function openWindow() {
+//     recycleBinWindow.classList.toggle("hide");
+// }
 
-// This function minimizes the recycle bin window
-function minWindow() {
-  tab = document.getElementById("recycle-tab");
-  if (tab.classList.contains("hide")) {
-    tab.classList.remove("hide");
-  } else {
-    tab.classList.add("hide");
-  }
-}
+// // This function closes the recycle bin window
+// function closeWindow() {
+//     recycleBinWindow.classList.add("hide");
+// }
 
-var recycleBinTab = document.getElementById("recycle-bin-tab");
-var minimizeButton = document.getElementById("minimize-button");
-var restoreButton = document.getElementById("restore-button");
+// // This function closes the recycle bin tab and window
+// function closeTab() {
+//     recycleBinTab.classList.add("hide");
+// }
 
-minimizeButton.onclick = minimizeWindow;
-recycleBinTab.onclick = restoreWindow;
+// // This function minimizes the recycle bin window
+// function minWindow() {
+//   tab = document.getElementById("recycle-tab");
+//   recycleBinWindow.classList.toggle("hide");
+// }
 
-function minimizeWindow() {
-  recycleBinTab.classList.toggle("hide");
-  recycleBinWindow.classList.add("hide");
-}
+// minimizeButton.onclick = minimizeWindow;
+// recycleBinTab.onclick = restoreWindow;
 
-function restoreWindow() {
-  recycleBinWindow.classList.toggle("hide");
-}
+// function minimizeWindow() {
+//   recycleBinTab.classList.toggle("hide");
+//   recycleBinWindow.classList.toggle("hide");
+// }
 
-// Clone window
+// function restoreWindow() {
+//   recycleBinWindow.classList.toggle("hide");
+// }
+
+// // Clone window
 // function cloneWindow() {
 //   var duplicateWindow = recycleBinWindow.cloneNode(true);
 //   recycleBinWindow.classList.toggle("hide");
