@@ -8,7 +8,6 @@
 
 // var tab, minButton;
 
-
 // document.getElementById("recycle-bin-button").addEventListener("dblclick", openWindow);
 // minimizeButton.onclick = minWindow;
 // closeWindowButton.onclick = closeWindow;
@@ -34,8 +33,6 @@
 //   tab = document.getElementById("recycle-tab");
 //   recycleBinWindow.classList.toggle("hide");
 // }
-
-
 
 // minimizeButton.onclick = minimizeWindow;
 // recycleBinTab.onclick = restoreWindow;

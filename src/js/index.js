@@ -19,6 +19,7 @@ dragElement(document.getElementById("documents-icon"));
 dragElement(document.getElementById("example-window"));
 
 
+
 // ==========================================================================
 //
 // Open Example Window Event Listeners
@@ -92,30 +93,35 @@ function closeExampleWindow() {
 }
 
 function maximizeExampleWindow() {
-    if (
-        exampleWindow.style.minWidth !== "100%" &&
-        exampleWindow.style.minHeight !== "96%"
-    ) {
-        exampleWindow.style.left = "0";
-        exampleWindow.style.right = "0";
-        exampleWindow.style.minWidth = "100%";
-        exampleWindow.style.minHeight = "100%";
-        exampleWindow.style.margin = "0";
-    } else {
-        exampleWindow.style.minWidth = "40%";
-        exampleWindow.style.minHeight = "40%";
-        exampleWindow.style.margin = "50px";
-        exampleWindow.style.left = "300px";
-    }
-}  
+  if (
+    exampleWindow.style.minWidth !== "100%" &&
+    exampleWindow.style.minHeight !== "96%"
+  ) {
+    exampleWindow.style.left = "0";
+    exampleWindow.style.right = "0";
+    exampleWindow.style.minWidth = "100%";
+    exampleWindow.style.minHeight = "100%";
+    exampleWindow.style.margin = "0";
+  } else {
+    exampleWindow.style.minWidth = "40%";
+    exampleWindow.style.minHeight = "40%";
+    exampleWindow.style.margin = "50px";
+    exampleWindow.style.left = "300px";
+  }
+}
 
 function minimizeExampleWindow() {
-    if (exampleWindow.style.display !== "none") {
-        exampleWindow.style.display = "none";
-    } else {
-        exampleWindow.style.display = "block";
-    }
-  
+  if (exampleWindow.style.display !== "none") {
+    exampleWindow.style.display = "none";
+  } else {
+    exampleWindow.style.display = "block";
+  }
+}
+// Clone window function
+function cloneWindow() {
+  var duplicateWindow = exampleWindow.cloneNode(true);
+  document.body.appendChild(duplicateWindow);
+  exampleWindow.classList.add("div-position");
 }  
 
 
@@ -125,7 +131,10 @@ function minimizeExampleWindow() {
 //
 // ==========================================================================
 function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  var pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
 
   if (document.getElementById(elmnt.id + "-header")) {
     /* if present, the header is where you move the DIV from:*/
@@ -157,8 +166,8 @@ function dragElement(elmnt) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+    elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
   }
 
   function closeDragElement() {
@@ -170,14 +179,15 @@ function dragElement(elmnt) {
 
 
 
+
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 /***
  * Crtical don't delete!
  */
 function partial(func /*, 0..n args */) {
-    var args = Array.prototype.slice.call(arguments, 1);
-    return function() {
-      var allArguments = args.concat(Array.prototype.slice.call(arguments));
-      return func.apply(this, allArguments);
-    };
+  var args = Array.prototype.slice.call(arguments, 1);
+  return function() {
+    var allArguments = args.concat(Array.prototype.slice.call(arguments));
+    return func.apply(this, allArguments);
+  };
 }
