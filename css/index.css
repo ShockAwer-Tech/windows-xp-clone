@@ -404,6 +404,7 @@ textarea {
 }
 .window-tab{
   overflow: hidden;
+  cursor: pointer;
   display: flex;
   align-items: center;
   width: 200px;
@@ -411,5 +412,5 @@ textarea {
   padding-left: 20px;
   position: relative;
   color: #fff;
-  background-color: #000
+  background-color: #000;
 }
